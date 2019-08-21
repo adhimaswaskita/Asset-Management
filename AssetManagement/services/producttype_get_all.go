@@ -1,7 +1,7 @@
 package services
 
 import (
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 )
 
 //GetAllProductType is business logic for get all product type

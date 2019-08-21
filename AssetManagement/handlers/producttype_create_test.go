@@ -13,8 +13,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	nhandler "github.com/adhimaswaskita/netmonk-asset-management/handlers"
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+	nhandler "github.com/adhimaswaskita/AssetManagement/handlers"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 )
 
 func (m *MockedService) CreateProductType(pt *nmodel.ProductType) (*nmodel.ProductType, error) {

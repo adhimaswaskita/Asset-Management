@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"testing"
 
-	nreadfile "github.com/adhimaswaskita/netmonk-asset-management/lib/readfile"
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
-	nservice "github.com/adhimaswaskita/netmonk-asset-management/services"
+	nreadfile "github.com/adhimaswaskita/AssetManagement/lib/readfile"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
+	nservice "github.com/adhimaswaskita/AssetManagement/services"
 )
 
 func (r *MockRepository) GetAllProductType() ([]nmodel.ProductType, error) {

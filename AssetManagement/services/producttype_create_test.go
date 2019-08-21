@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
-	nservice "github.com/adhimaswaskita/netmonk-asset-management/services"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
+	nservice "github.com/adhimaswaskita/AssetManagement/services"
 	"github.com/jinzhu/gorm"
 )
 
@@ -52,7 +52,7 @@ func TestCreateProductType(t *testing.T) {
 			t.Errorf("Product Types name want product type 1 but have %v", productTypes.ID)
 		}
 	})
-	
+
 	t.Run("Create All Product Type NOK", func(t *testing.T) {
 		repository.ErrMap["ErrorCreateAllProductType"] = true
 		_, err := service.CreateProductType(productType)

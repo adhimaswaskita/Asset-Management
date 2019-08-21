@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 )
 
 //GetAllProductType get all product type from database

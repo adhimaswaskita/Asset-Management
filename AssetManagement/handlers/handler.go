@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	nservice "github.com/adhimaswaskita/netmonk-asset-management/services"
+	nservice "github.com/adhimaswaskita/AssetManagement/services"
 )
 
 //IHandler is handler contract

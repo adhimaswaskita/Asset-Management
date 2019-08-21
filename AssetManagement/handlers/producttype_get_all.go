@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	nrf "github.com/adhimaswaskita/netmonk-asset-management/lib/responseformat"
+	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
 )
 
 //GetAllProductType is used to get all product type data

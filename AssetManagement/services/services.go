@@ -1,8 +1,8 @@
 package services
 
 import (
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
-	nrepo "github.com/adhimaswaskita/netmonk-asset-management/repositories"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
+	nrepo "github.com/adhimaswaskita/AssetManagement/repositories"
 )
 
 //IService is service contract

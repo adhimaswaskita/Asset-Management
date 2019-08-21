@@ -9,7 +9,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	nhandler "github.com/adhimaswaskita/netmonk-asset-management/handlers"
+	nhandler "github.com/adhimaswaskita/AssetManagement/handlers"
 )
 
 func (m *MockedService) DeleteProductType(ID int) error {

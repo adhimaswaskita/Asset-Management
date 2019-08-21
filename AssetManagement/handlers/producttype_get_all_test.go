@@ -8,9 +8,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	nhandler "github.com/adhimaswaskita/netmonk-asset-management/handlers"
-	nreadfile "github.com/adhimaswaskita/netmonk-asset-management/lib/readfile"
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+	nhandler "github.com/adhimaswaskita/AssetManagement/handlers"
+	nreadfile "github.com/adhimaswaskita/AssetManagement/lib/readfile"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 	"github.com/gorilla/mux"
 )
 

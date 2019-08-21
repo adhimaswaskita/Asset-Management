@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
-	nservice "github.com/adhimaswaskita/netmonk-asset-management/services"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
+	nservice "github.com/adhimaswaskita/AssetManagement/services"
 	"github.com/jinzhu/gorm"
 )
 

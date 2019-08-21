@@ -3,7 +3,7 @@ package config_test
 import (
 	"testing"
 
-	nconfig "github.com/adhimaswaskita/netmonk-asset-management/config"
+	nconfig "github.com/adhimaswaskita/AssetManagement/config"
 )
 
 func TestNewConfig(t *testing.T) {

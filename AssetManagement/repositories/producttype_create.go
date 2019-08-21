@@ -1,6 +1,6 @@
 package repositories
 
-import nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+import nmodel "github.com/adhimaswaskita/AssetManagement/models"
 
 //CreateProductType insert data to database from param
 func (r *Repository) CreateProductType(pt *nmodel.ProductType) (*nmodel.ProductType, error) {

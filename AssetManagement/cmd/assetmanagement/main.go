@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
-	nconfig "github.com/adhimaswaskita/netmonk-asset-management/config"
-	nhandlers "github.com/adhimaswaskita/netmonk-asset-management/handlers"
-	nrepo "github.com/adhimaswaskita/netmonk-asset-management/repositories"
-	nservices "github.com/adhimaswaskita/netmonk-asset-management/services"
+	nconfig "github.com/adhimaswaskita/AssetManagement/config"
+	nhandlers "github.com/adhimaswaskita/AssetManagement/handlers"
+	nrepo "github.com/adhimaswaskita/AssetManagement/repositories"
+	nservices "github.com/adhimaswaskita/AssetManagement/services"
 	"github.com/gorilla/mux"
 )
 

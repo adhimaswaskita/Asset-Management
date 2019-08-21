@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	nrepo "github.com/adhimaswaskita/netmonk-asset-management/repositories"
+	nrepo "github.com/adhimaswaskita/AssetManagement/repositories"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
