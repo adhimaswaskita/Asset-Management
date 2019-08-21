@@ -1,0 +1,7 @@
+mode: set
+github.com/adhimaswaskita/netmonk-asset-management/repositories/producttype_create.go:6.93,9.2 2 1
+github.com/adhimaswaskita/netmonk-asset-management/repositories/producttype_get_all.go:8.78,12.2 2 1
+github.com/adhimaswaskita/netmonk-asset-management/repositories/producttype_update.go:8.111,14.2 3 1
+github.com/adhimaswaskita/netmonk-asset-management/repositories/repository.go:28.73,34.16 4 0
+github.com/adhimaswaskita/netmonk-asset-management/repositories/repository.go:39.2,43.24 2 0
+github.com/adhimaswaskita/netmonk-asset-management/repositories/repository.go:34.16,36.3 1 0

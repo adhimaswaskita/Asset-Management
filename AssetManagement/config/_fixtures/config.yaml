@@ -1,0 +1,8 @@
+application:
+  name: "Asset Management"
+  server: "localhost:8080"
+repository:
+  db_server: "localhost:5432"
+  db_name: "asset"
+  db_username: "postgres"
+  db_password: "postgres"
