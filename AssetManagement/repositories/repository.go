@@ -17,6 +17,7 @@ type IRepository interface {
 	GetAllProductType() ([]nmodel.ProductType, error)
 	CreateProductType(*nmodel.ProductType) (*nmodel.ProductType, error)
 	UpdateProductType(ID uint, ProductType *nmodel.ProductType) (*nmodel.ProductType, error)
+	DeleteProductType(ID int) error
 }
 
 //Repository implements IRepository

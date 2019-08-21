@@ -32,4 +32,12 @@ func TestDeleteProductType(t *testing.T) {
 			t.Errorf("This should not be error, but have %v", err)
 		}
 	})
+	t.Run("Delete product type NOK", func(t *testing.T) {
+		repository.ErrMap["ErrorCreateAllProductType"] = true
+		ID := 1
+		err := service.DeleteProductType(ID)
+		if err == nil {
+			t.Errorf("This should be error, but have %v", err)
+		}
+	})
 }
