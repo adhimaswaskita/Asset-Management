@@ -17,7 +17,7 @@ func TestProductType(t *testing.T) {
 
 	defer db.Close()
 
-	gormDB, err := gorm.Open("sqlite3", db)
+	gormDB, err := gorm.Open("postgres", db)
 	if err != nil {
 		t.Errorf("Error open mocked gorm")
 	}
