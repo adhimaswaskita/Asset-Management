@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	nconfig "github.com/adhimaswaskita/netmonk-asset-management/config"
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+	nconfig "github.com/adhimaswaskita/AssetManagement/config"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 	"github.com/jinzhu/gorm"
 
 	//Import postgres from gorm and initialize it

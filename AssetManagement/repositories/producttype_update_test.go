@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
-	nrepo "github.com/adhimaswaskita/netmonk-asset-management/repositories"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
+	nrepo "github.com/adhimaswaskita/AssetManagement/repositories"
 	"github.com/jinzhu/gorm"
 )
 

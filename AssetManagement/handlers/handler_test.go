@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	nrf "github.com/adhimaswaskita/netmonk-asset-management/lib/responseformat"
+	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
 )
 
 type MockedService struct {

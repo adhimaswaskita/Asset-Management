@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	nrf "github.com/adhimaswaskita/netmonk-asset-management/lib/responseformat"
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 )
 
 //CreateProductType is used to create new product type

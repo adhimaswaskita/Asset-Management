@@ -7,8 +7,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	nrf "github.com/adhimaswaskita/netmonk-asset-management/lib/responseformat"
-	nmodel "github.com/adhimaswaskita/netmonk-asset-management/models"
+	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
+	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 )
 
 //UpdateProductType is used to update product type
