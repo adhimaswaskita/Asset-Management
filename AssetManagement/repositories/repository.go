@@ -14,10 +14,13 @@ import (
 
 //IRepository is repo contract
 type IRepository interface {
+	//Product Type
 	GetAllProductType() ([]nmodel.ProductType, error)
 	CreateProductType(*nmodel.ProductType) (*nmodel.ProductType, error)
 	UpdateProductType(ID uint, ProductType *nmodel.ProductType) (*nmodel.ProductType, error)
 	DeleteProductType(ID int) error
+	//Manufacture
+	CreateManufacture(*nmodel.Manufacture) (*nmodel.Manufacture, error)
 }
 
 //Repository implements IRepository
