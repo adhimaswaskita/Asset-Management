@@ -26,6 +26,8 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 
 	router.HandleFunc("/manufacture", h.CreateManufacture).Methods("POST")
 	router.HandleFunc("/manufacture", h.GetAllManufacture).Methods("GET")
+	router.HandleFunc("/manufacture/{id}", h.UpdateManufacture).Methods("PUT")
+	router.HandleFunc("/manufacture/{id}", h.DeleteManufacture).Methods("DELETE")
 	return router
 }
 

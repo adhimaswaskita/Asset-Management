@@ -17,6 +17,7 @@ type IHandler interface {
 	CreateManufacture(w http.ResponseWriter, r *http.Request)
 	GetAllManufacture(w http.ResponseWriter, r *http.Request)
 	UpdateManufacture(w http.ResponseWriter, r *http.Request)
+	DeleteManufacture(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler
