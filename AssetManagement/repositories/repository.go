@@ -23,6 +23,7 @@ type IRepository interface {
 	CreateManufacture(*nmodel.Manufacture) (*nmodel.Manufacture, error)
 	GetAllManufacture() ([]nmodel.Manufacture, error)
 	UpdateManufacture(ID uint, Manufacture *nmodel.Manufacture) (*nmodel.Manufacture, error)
+	DeleteManufacture(ID uint) error
 }
 
 //Repository implements IRepository
