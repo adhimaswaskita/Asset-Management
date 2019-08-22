@@ -28,7 +28,9 @@ func TestDeleteProductType(t *testing.T) {
 	t.Run("Delete Product Type OK", func(t *testing.T) {
 		var ID int = 1
 
-		mock.ExpectExec("DELETE").WithArgs(ID).WillReturnResult(sqlmock.NewResult(0, 1))
+		mock.ExpectBegin()
+		mock.ExpectExec("UPDATE").WillReturnResult(sqlmock.NewResult(0, 1))
+		mock.ExpectCommit()
 
 		err := repository.DeleteProductType(ID)
 		if err != nil {
