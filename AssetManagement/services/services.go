@@ -14,6 +14,7 @@ type IService interface {
 	DeleteProductType(ID int) error
 	//Manufacture
 	CreateManufacture(*nmodel.Manufacture) (*nmodel.Manufacture, error)
+	GetAllManufacture() (*[]nmodel.Manufacture, error)
 }
 
 //Service is business logic that implements IService
