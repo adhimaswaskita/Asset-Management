@@ -14,7 +14,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func (s *MockedService) GetAllManufacture() (*[]nmodel.Manufacture, error) {
+func (s *MockedService) GetAllManufacture() ([]nmodel.Manufacture, error) {
 	if s.ErrMap["ErrorGetAllManufacture"] {
 		return nil, fmt.Errorf("%v", s.ErrStatement)
 	}
@@ -27,7 +27,7 @@ func (s *MockedService) GetAllManufacture() (*[]nmodel.Manufacture, error) {
 	manufacture := []nmodel.Manufacture{}
 	json.Unmarshal(bManufacture, &manufacture)
 
-	return &manufacture, nil
+	return manufacture, nil
 }
 
 func TestGetAllManufacture(t *testing.T) {
