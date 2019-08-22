@@ -1,0 +1,20 @@
+mode: set
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_create.go:12.77,20.16 6 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_create.go:25.2,25.42 1 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_create.go:20.16,23.3 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_get_all.go:10.77,14.16 3 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_get_all.go:19.2,20.8 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_get_all.go:14.16,17.3 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_update.go:15.77,29.16 10 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_update.go:34.2,34.42 1 1
+github.com/adhimaswaskita/AssetManagement/handlers/producttype_update.go:29.16,32.3 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/handler.go:27.47,32.2 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/manufacture_create.go:12.77,20.16 6 1
+github.com/adhimaswaskita/AssetManagement/handlers/manufacture_create.go:25.2,25.42 1 1
+github.com/adhimaswaskita/AssetManagement/handlers/manufacture_create.go:20.16,23.3 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/manufacture_get_all.go:10.77,14.16 3 1
+github.com/adhimaswaskita/AssetManagement/handlers/manufacture_get_all.go:19.2,20.8 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/manufacture_get_all.go:14.16,17.3 2 1
+github.com/adhimaswaskita/AssetManagement/handlers/prodcuttype_delete.go:13.77,22.16 7 1
+github.com/adhimaswaskita/AssetManagement/handlers/prodcuttype_delete.go:27.2,27.47 1 1
+github.com/adhimaswaskita/AssetManagement/handlers/prodcuttype_delete.go:22.16,25.3 2 1
