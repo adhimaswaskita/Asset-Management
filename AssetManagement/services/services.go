@@ -7,10 +7,13 @@ import (
 
 //IService is service contract
 type IService interface {
+	//Product Type
 	CreateProductType(*nmodel.ProductType) (*nmodel.ProductType, error)
 	GetAllProductType() ([]nmodel.ProductType, error)
 	UpdateProductType(ID uint, ProductType *nmodel.ProductType) (*nmodel.ProductType, error)
 	DeleteProductType(ID int) error
+	//Manufacture
+	CreateManufacture(*nmodel.Manufacture) (*nmodel.Manufacture, error)
 }
 
 //Service is business logic that implements IService
