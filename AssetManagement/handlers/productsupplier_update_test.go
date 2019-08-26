@@ -31,7 +31,7 @@ func (m *MockedService) UpdateProductSupplier(ID uint, ProductSupplier *nmodel.P
 		State:       "Product Supplier state 1",
 		Zip:         68215,
 		ContactName: "Product Supplier contact name 1",
-		Phone:       6281331555666,
+		Phone:       "081331555666",
 		Email:       "productSupplier1@gmail.com",
 		URL:         "www.productsupplier1.io",
 	}
@@ -58,7 +58,7 @@ func TestUpdateProductSupplier(t *testing.T) {
 			State:       "Product Supplier state 1",
 			Zip:         68215,
 			ContactName: "Product Supplier contact name 1",
-			Phone:       6281331555666,
+			Phone:       "081331555666",
 			Email:       "productSupplier1@gmail.com",
 			URL:         "www.productsupplier1.io",
 		}
@@ -106,7 +106,7 @@ func TestUpdateProductSupplier(t *testing.T) {
 			State:       "Product Supplier state 1",
 			Zip:         68215,
 			ContactName: "Product Supplier contact name 1",
-			Phone:       6281331555666,
+			Phone:       "081331555666",
 			Email:       "productSupplier1@gmail.com",
 			URL:         "www.productsupplier1.io",
 		}

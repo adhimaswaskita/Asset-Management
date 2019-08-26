@@ -23,6 +23,11 @@ type IHandler interface {
 	GetAllProductSupplier(w http.ResponseWriter, r *http.Request)
 	UpdateProductSupplier(w http.ResponseWriter, r *http.Request)
 	DeleteProductSupplier(w http.ResponseWriter, r *http.Request)
+	//Product
+	CreateProduct(w http.ResponseWriter, r *http.Request)
+	GetAllProduct(w http.ResponseWriter, r *http.Request)
+	UpdateProduct(w http.ResponseWriter, r *http.Request)
+	DeleteProduct(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler
