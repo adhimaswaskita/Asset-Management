@@ -34,7 +34,7 @@ func TestGetAllProductSupplier(t *testing.T) {
 		if err != nil {
 			t.Errorf("This should not be error")
 		}
-		if len(productSuppliers) <= 0 {
+		if len(productSuppliers) < 0 {
 			t.Errorf("This should not be 0")
 		}
 	})
