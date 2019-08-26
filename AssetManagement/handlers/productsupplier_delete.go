@@ -18,7 +18,8 @@ func (h *Handler) DeleteProductSupplier(w http.ResponseWriter, r *http.Request) 
 	id := params["id"]
 
 	intID, _ := strconv.Atoi(id)
-	err := h.Service.DeleteProductSupplier(intID)
+	uintID := uint(intID)
+	err := h.Service.DeleteProductSupplier(uintID)
 	if err != nil {
 		rf.Response(nrf.ERROR, productSupplierParam, w)
 		return

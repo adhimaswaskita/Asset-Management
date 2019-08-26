@@ -12,7 +12,7 @@ import (
 	nhandler "github.com/adhimaswaskita/AssetManagement/handlers"
 )
 
-func (m *MockedService) DeleteProductSupplier(ID int) error {
+func (m *MockedService) DeleteProductSupplier(ID uint) error {
 	if m.ErrMap["ErrorDeleteProductSupplier"] {
 		return fmt.Errorf("%v", m.ErrStatement)
 	}

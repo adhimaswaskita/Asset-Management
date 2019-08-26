@@ -7,7 +7,7 @@ import (
 	nservice "github.com/adhimaswaskita/AssetManagement/services"
 )
 
-func (m *MockRepository) DeleteProductSupplier(ID int) error {
+func (m *MockRepository) DeleteProductSupplier(ID uint) error {
 	if m.ErrMap["ErrorDeleteProductSupplier"] {
 		return fmt.Errorf("%v", m.ErrStatement)
 	}
@@ -27,7 +27,8 @@ func TestDeleteProductSupplier(t *testing.T) {
 
 	t.Run("Delete product supplier OK", func(t *testing.T) {
 		ID := 1
-		err := service.DeleteProductSupplier(ID)
+		uintID := uint(ID)
+		err := service.DeleteProductSupplier(uintID)
 		if err != nil {
 			t.Errorf("This should not be error, but have %v", err)
 		}
@@ -35,7 +36,8 @@ func TestDeleteProductSupplier(t *testing.T) {
 	t.Run("Delete product supplier NOK", func(t *testing.T) {
 		repository.ErrMap["ErrorDeleteProductSupplier"] = true
 		ID := 1
-		err := service.DeleteProductSupplier(ID)
+		uintID := uint(ID)
+		err := service.DeleteProductSupplier(uintID)
 		if err == nil {
 			t.Errorf("This should be error, but have %v", err)
 		}

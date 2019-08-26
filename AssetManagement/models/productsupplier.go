@@ -14,7 +14,7 @@ type ProductSupplier struct {
 	Country     string `json:"Country"`
 	Zip         int    `json:"Zip"`
 	ContactName string `json:"ContactName"`
-	Phone       int    `json:"Phone"`
+	Phone       string `json:"Phone"`
 	Email       string `json:"Email"`
 	URL         string `json:"URL"`
 }

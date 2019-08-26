@@ -28,7 +28,7 @@ type IRepository interface {
 	GetAllProductSupplier() ([]nmodel.ProductSupplier, error)
 	CreateProductSupplier(*nmodel.ProductSupplier) (*nmodel.ProductSupplier, error)
 	UpdateProductSupplier(ID uint, ProductSupplier *nmodel.ProductSupplier) (*nmodel.ProductSupplier, error)
-	DeleteProductSupplier(ID int) error
+	DeleteProductSupplier(ID uint) error
 }
 
 //Repository implements IRepository
