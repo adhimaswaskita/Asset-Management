@@ -1,0 +1,32 @@
+[
+    {
+        "ID" : 1,
+        "CreatedAt" : "2019-07-31T13:38:25+07:00",
+        "UpdatedAt" : "2019-07-31T13:38:25+07:00",
+        "DeletedAt" : null,
+        "Name":        "Product Supplier 1",
+		"Address":     "Product Supplier address 1",
+		"City":        "Product Supplier city 1",
+		"State":       "Product Supplier state 1",
+		"Zip":         68215,
+		"ContactName": "Product Supplier contact name 1",
+		"Phone":       6281331555666,
+		"Email":       "productSupplier1@gmail.com",
+		"URL":         "www.productsupplier1.io"
+    },
+    {
+        "ID" : 2,
+        "CreatedAt" : "2019-07-31T13:38:25+07:00",
+        "UpdatedAt" : "2019-07-31T13:38:25+07:00",
+        "DeletedAt" : null,
+        "Name":        "Product Supplier 2",
+		"Address":     "Product Supplier address 2",
+		"City":        "Product Supplier city 2",
+		"State":       "Product Supplier state 2",
+		"Zip":         68225,
+		"ContactName": "Product Supplier contact name 2",
+		"Phone":       6282332555666,
+		"Email":       "productSupplier2@gmail.com",
+		"URL":         "www.productsupplier2.io"
+    }
+]

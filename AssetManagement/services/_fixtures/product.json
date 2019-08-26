@@ -1,0 +1,26 @@
+[
+    {
+        "ID" : 1,
+        "CreatedAt" : "2019-07-31T13:38:25+07:00",
+        "UpdatedAt" : "2019-07-31T13:38:25+07:00",
+        "DeletedAt" : null,
+        "Name":              "Product 1",
+		"ManufactureID":     1,
+		"ProductTypeID":     1,
+		"ProductSupplierID": 1,
+		"Manufacturer":      "Product 1 manufacturer",
+		"PartNo":            19
+    },
+    {
+        "ID" : 2,
+        "CreatedAt" : "2019-07-31T13:38:25+07:00",
+        "UpdatedAt" : "2019-07-31T13:38:25+07:00",
+        "DeletedAt" : null,
+        "Name":              "Product 2",
+		"ManufactureID":     1,
+		"ProductTypeID":     1,
+		"ProductSupplierID": 1,
+		"Manufacturer":      "Product 2 manufacturer",
+		"PartNo":            19
+    }
+]
