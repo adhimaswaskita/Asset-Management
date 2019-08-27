@@ -1,6 +1,7 @@
 package repositories_test
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -47,5 +48,24 @@ func TestCreateProduct(t *testing.T) {
 		if products == nil {
 			t.Errorf("This should not be 0")
 		}
+	})
+	t.Run("Create Product NOK", func(t *testing.T) {
+		product := &nmodel.Product{
+			Name:              "Product 1",
+			ManufactureID:     1,
+			ProductTypeID:     1,
+			ProductSupplierID: 1,
+			Manufacturer:      "Product 1 manufacturer",
+			PartNo:            19,
+		}
+
+		mock.ExpectBegin()
+		mock.ExpectExec("INSERT").WillReturnError(errors.New("Insert product failed!"))
+		mock.ExpectCommit()
+
+		_, err := repository.CreateProduct(product)
+		if err == nil {
+			t.Errorf("Create product should be failed")
+		} 
 	})
 }
