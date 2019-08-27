@@ -18,9 +18,10 @@ func (h *Handler) CreateProductType(w http.ResponseWriter, r *http.Request) {
 
 	productType, err := h.Service.CreateProductType(productTypeParam)
 	if err != nil {
-		rf.Response(nrf.ERROR, productType, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productType, w)
+	rf.Response(nrf.SUCCESS, productType, nil, w)
 }

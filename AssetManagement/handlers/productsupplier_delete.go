@@ -21,9 +21,10 @@ func (h *Handler) DeleteProductSupplier(w http.ResponseWriter, r *http.Request) 
 	uintID := uint(intID)
 	err := h.Service.DeleteProductSupplier(uintID)
 	if err != nil {
-		rf.Response(nrf.ERROR, productSupplierParam, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productSupplierParam, w)
+	rf.Response(nrf.SUCCESS, productSupplierParam, nil, w)
 }

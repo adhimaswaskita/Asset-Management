@@ -26,6 +26,7 @@ type IHandler interface {
 	//Product
 	CreateProduct(w http.ResponseWriter, r *http.Request)
 	GetAllProduct(w http.ResponseWriter, r *http.Request)
+	GetOneProduct(w http.ResponseWriter, r *http.Request)
 	UpdateProduct(w http.ResponseWriter, r *http.Request)
 	DeleteProduct(w http.ResponseWriter, r *http.Request)
 }

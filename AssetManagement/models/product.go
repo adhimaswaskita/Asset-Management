@@ -11,6 +11,5 @@ type Product struct {
 	ManufactureID     uint   `json:"ManufactureID"`
 	ProductTypeID     uint   `json:"ProductTypeID"`
 	ProductSupplierID uint   `json:"ProductSupplierID"`
-	Manufacturer      string `json:"Manufacturer"`
 	PartNo            int    `json:"PartNo"`
 }

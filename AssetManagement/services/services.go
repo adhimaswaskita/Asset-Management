@@ -24,6 +24,7 @@ type IService interface {
 	DeleteProductSupplier(ID uint) error
 	//Product
 	GetAllProduct() ([]nmodel.Product, error)
+	GetOneProduct(ID uint) (*nmodel.Product, error)
 	CreateProduct(*nmodel.Product) (*nmodel.Product, error)
 	UpdateProduct(ID uint, Product *nmodel.Product) (*nmodel.Product, error)
 	DeleteProduct(ID uint) error
