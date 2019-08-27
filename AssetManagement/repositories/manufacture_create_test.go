@@ -1,6 +1,7 @@
 package repositories_test
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -43,5 +44,22 @@ func TestCreateManufacture(t *testing.T) {
 		if manufactures == nil {
 			t.Errorf("This should not be 0")
 		}
+	})
+
+	t.Run("Create Manufacture NOK", func(t *testing.T) {
+		manufacture := &nmodel.Manufacture{
+			Name:    "Manufacture 1",
+			Comment: "Comment",
+		}
+
+		mock.ExpectBegin()
+		mock.ExpectExec("INSERT").WillReturnError(errors.New("Insert manufacture failed"))
+		mock.ExpectCommit()
+
+		_, err := repository.CreateManufacture(manufacture)
+		if err == nil {
+			t.Errorf("This should be an error")
+		}
+
 	})
 }

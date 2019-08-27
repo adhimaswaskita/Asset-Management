@@ -1,6 +1,7 @@
 package repositories_test
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -37,4 +38,18 @@ func TestDeleteManufacture(t *testing.T) {
 			t.Errorf("This should not be error, but have %v", err)
 		}
 	})
+
+	t.Run("Delete Manufacture NOK", func(t *testing.T) {
+		ID := uint(1)
+
+		mock.ExpectBegin()
+		mock.ExpectExec("UPDATE").WillReturnError(errors.New("Delete manufacture failed"))
+		mock.ExpectCommit()
+
+		err := repository.DeleteManufacture(ID)
+		if err == nil {
+			t.Errorf("This should be error")
+		}
+	})
+
 }

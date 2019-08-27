@@ -1,6 +1,7 @@
 package repositories_test
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -35,6 +36,19 @@ func TestDeleteProductType(t *testing.T) {
 		err := repository.DeleteProductType(ID)
 		if err != nil {
 			t.Errorf("This should not be error, but have %v", err)
+		}
+	})
+
+	t.Run("Delete Product Type NOK", func(t *testing.T) {
+		var ID int = 1
+
+		mock.ExpectBegin()
+		mock.ExpectExec("UPDATE").WillReturnError(errors.New("Delete product type failed"))
+		mock.ExpectCommit()
+
+		err := repository.DeleteProductType(ID)
+		if err == nil {
+			t.Errorf("This should be an error")
 		}
 	})
 }

@@ -8,7 +8,10 @@ import (
 func (r *Repository) UpdateProductType(ID uint, productType *nmodel.ProductType) (*nmodel.ProductType, error) {
 	var pt nmodel.ProductType
 
-	r.DB.Model(&pt).Where("ID = ?", ID).Updates(productType)
+	err := r.DB.Model(&pt).Where("ID = ?", ID).Updates(productType).Error
+	if err != nil {
+		return nil, err
+	}
 
 	return productType, nil
 }
