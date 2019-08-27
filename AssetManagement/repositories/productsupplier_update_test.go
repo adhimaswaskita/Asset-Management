@@ -1,6 +1,7 @@
 package repositories_test
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -42,6 +43,22 @@ func TestUpdateProductSupplier(t *testing.T) {
 		}
 		if productSuppliers.Name != "New Product Supplier 1" {
 			t.Errorf("ProductSupplier name should be equal to 'New Product Supplier 1' but have %v", productSuppliers.Name)
+		}
+	})
+
+	t.Run("Update Product Supplier NOK", func(t *testing.T) {
+		var ID uint = 1
+		productSupplier := &nmodel.ProductSupplier{
+			Name: "New Product Supplier 1",
+		}
+
+		mock.ExpectBegin()
+		mock.ExpectExec("UPDATE").WillReturnError(errors.New("Update product supplier failed"))
+		mock.ExpectCommit()
+
+		_, err := repository.UpdateProductSupplier(ID, productSupplier)
+		if err == nil {
+			t.Errorf("This should be an error")
 		}
 	})
 }

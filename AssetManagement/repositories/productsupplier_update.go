@@ -6,6 +6,10 @@ import nmodel "github.com/adhimaswaskita/AssetManagement/models"
 func (r *Repository) UpdateProductSupplier(ID uint, ProductSupplier *nmodel.ProductSupplier) (*nmodel.ProductSupplier, error) {
 	var productSupplierParam nmodel.ProductSupplier
 
-	r.DB.Model(&productSupplierParam).Where("ID = ?", ID).Updates(ProductSupplier)
+	err := r.DB.Model(&productSupplierParam).Where("ID = ?", ID).Updates(ProductSupplier).Error
+	if err != nil {
+		return nil, err
+	}
+
 	return ProductSupplier, nil
 }
