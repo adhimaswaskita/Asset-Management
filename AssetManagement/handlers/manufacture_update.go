@@ -26,9 +26,10 @@ func (h Handler) UpdateManufacture(w http.ResponseWriter, r *http.Request) {
 
 	manufacture, err := h.Service.UpdateManufacture(ID, manufactureParam)
 	if err != nil {
-		rf.Response(nrf.ERROR, manufacture, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, manufacture, w)
+	rf.Response(nrf.SUCCESS, manufacture, nil, w)
 }

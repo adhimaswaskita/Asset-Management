@@ -12,10 +12,11 @@ func (h *Handler) GetAllProduct(w http.ResponseWriter, r *http.Request) {
 
 	products, err := h.Service.GetAllProduct()
 	if err != nil {
-		rf.Response(nrf.ERROR, nil, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, products, w)
+	rf.Response(nrf.SUCCESS, products, nil, w)
 	return
 }

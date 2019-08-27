@@ -18,9 +18,10 @@ func (h *Handler) CreateProductSupplier(w http.ResponseWriter, r *http.Request) 
 
 	productSupplier, err := h.Service.CreateProductSupplier(productSupplierParam)
 	if err != nil {
-		rf.Response(nrf.ERROR, productSupplier, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productSupplier, w)
+	rf.Response(nrf.SUCCESS, productSupplier, nil, w)
 }

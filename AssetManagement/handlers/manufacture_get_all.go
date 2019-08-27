@@ -12,10 +12,11 @@ func (h *Handler) GetAllManufacture(w http.ResponseWriter, r *http.Request) {
 
 	manufactures, err := h.Service.GetAllManufacture()
 	if err != nil {
-		rf.Response(nrf.ERROR, nil, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, manufactures, w)
+	rf.Response(nrf.SUCCESS, manufactures, nil, w)
 	return
 }

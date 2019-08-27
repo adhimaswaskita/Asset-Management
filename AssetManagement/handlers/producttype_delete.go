@@ -20,9 +20,10 @@ func (h *Handler) DeleteProductType(w http.ResponseWriter, r *http.Request) {
 	intID, _ := strconv.Atoi(id)
 	err := h.Service.DeleteProductType(intID)
 	if err != nil {
-		rf.Response(nrf.ERROR, productTypeParam, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productTypeParam, w)
+	rf.Response(nrf.SUCCESS, productTypeParam, nil, w)
 }

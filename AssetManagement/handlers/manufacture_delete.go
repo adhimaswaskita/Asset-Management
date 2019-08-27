@@ -5,14 +5,12 @@ import (
 	"strconv"
 
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
-	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 	"github.com/gorilla/mux"
 )
 
 //DeleteManufacture is delete manufacture handler
 func (h *Handler) DeleteManufacture(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
-	manufactureParam := &nmodel.Manufacture{}
 
 	params := mux.Vars(r)
 	id := params["id"]
@@ -20,10 +18,12 @@ func (h *Handler) DeleteManufacture(w http.ResponseWriter, r *http.Request) {
 	intID, _ := strconv.Atoi(id)
 	ID := uint(intID)
 	err := h.Service.DeleteManufacture(ID)
+
 	if err != nil {
-		rf.Response(nrf.ERROR, manufactureParam, w)
+		stringErr := err.Error()
+		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, manufactureParam, w)
+	rf.Response(nrf.SUCCESS, ID, nil, w)
 }
