@@ -29,7 +29,6 @@ func (m *MockedService) UpdateProduct(ID uint, Product *nmodel.Product) (*nmodel
 		ManufactureID:     1,
 		ProductTypeID:     1,
 		ProductSupplierID: 1,
-		Manufacturer:      "New Product 1 manufacturer",
 		PartNo:            19,
 	}
 	return product, nil
@@ -53,7 +52,6 @@ func TestUpdateProduct(t *testing.T) {
 			ManufactureID:     1,
 			ProductTypeID:     1,
 			ProductSupplierID: 1,
-			Manufacturer:      "New Product 1 manufacturer",
 			PartNo:            19,
 		}
 		jsonProduct, _ := json.Marshal(product)
@@ -98,7 +96,6 @@ func TestUpdateProduct(t *testing.T) {
 			ManufactureID:     1,
 			ProductTypeID:     1,
 			ProductSupplierID: 1,
-			Manufacturer:      "New Product 1 manufacturer",
 			PartNo:            19,
 		}
 		jsonProduct, _ := json.Marshal(product)

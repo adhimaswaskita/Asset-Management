@@ -29,7 +29,6 @@ func (m *MockedService) CreateProduct(pt *nmodel.Product) (*nmodel.Product, erro
 		ManufactureID:     1,
 		ProductTypeID:     1,
 		ProductSupplierID: 1,
-		Manufacturer:      "Product 1 manufacturer",
 		PartNo:            19,
 	}
 	return product, nil
@@ -54,7 +53,6 @@ func TestCreateProduct(t *testing.T) {
 			ManufactureID:     1,
 			ProductTypeID:     1,
 			ProductSupplierID: 1,
-			Manufacturer:      "Product 1 manufacturer",
 			PartNo:            19,
 		}
 		jsonProduct, _ := json.Marshal(product)
@@ -84,7 +82,6 @@ func TestCreateProduct(t *testing.T) {
 			ManufactureID:     1,
 			ProductTypeID:     1,
 			ProductSupplierID: 1,
-			Manufacturer:      "Product 1 manufacturer",
 			PartNo:            19,
 		}
 		jsonProduct, _ := json.Marshal(product)
