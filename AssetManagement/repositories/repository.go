@@ -45,6 +45,11 @@ type IRepository interface {
 	CreateOrganizationRegion(*nmodel.OrganizationRegion) (*nmodel.OrganizationRegion, error)
 	UpdateOrganizationRegion(ID uint, OrganizationRegion *nmodel.OrganizationRegion) (*nmodel.OrganizationRegion, error)
 	DeleteOrganizationRegion(ID uint) error
+	//OrganizationRegion
+	GetAllOrganizationSite() ([]nmodel.OrganizationSite, error)
+	CreateOrganizationSite(*nmodel.OrganizationSite) (*nmodel.OrganizationSite, error)
+	UpdateOrganizationSite(ID uint, OrganizationSite *nmodel.OrganizationSite) (*nmodel.OrganizationSite, error)
+	DeleteOrganizationSite(ID uint) error
 }
 
 //Repository implements IRepository
