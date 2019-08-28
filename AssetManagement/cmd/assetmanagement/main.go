@@ -50,10 +50,21 @@ func AutoMigrateDB(repository *nrepo.Repository) {
 	repository.DB.AutoMigrate(&nmodels.Manufacture{})
 	repository.DB.AutoMigrate(&nmodels.ProductSupplier{})
 	repository.DB.AutoMigrate(&nmodels.Product{})
+	repository.DB.AutoMigrate(&nmodels.Asset{})
+	repository.DB.AutoMigrate(&nmodels.OrganizationSite{})
+	repository.DB.AutoMigrate(&nmodels.OrganizationRegion{})
+	repository.DB.AutoMigrate(&nmodels.Organization{})
+	repository.DB.AutoMigrate(&nmodels.ProductStatus{})
 
 	repository.DB.Model(&nmodels.Product{}).AddForeignKey("manufacture_id", "manufactures(id)", "RESTRICT", "RESTRICT")
 	repository.DB.Model(&nmodels.Product{}).AddForeignKey("product_type_id", "product_types(id)", "RESTRICT", "RESTRICT")
 	repository.DB.Model(&nmodels.Product{}).AddForeignKey("product_supplier_id", "product_suppliers(id)", "RESTRICT", "RESTRICT")
+	repository.DB.Model(&nmodels.Asset{}).AddForeignKey("product_id", "products(id)", "RESTRICT", "RESTRICT")
+	repository.DB.Model(&nmodels.Asset{}).AddForeignKey("site_id", "organization_sites(id)", "RESTRICT", "RESTRICT")
+	repository.DB.Model(&nmodels.Asset{}).AddForeignKey("product_status_id", "product_statuses(id)", "RESTRICT", "RESTRICT")
+	repository.DB.Model(&nmodels.OrganizationSite{}).AddForeignKey("region_id", "organization_regions(id)", "RESTRICT", "RESTRICT")
+	repository.DB.Model(&nmodels.OrganizationRegion{}).AddForeignKey("organization_id", "organizations(id)", "RESTRICT", "RESTRICT")
+
 }
 
 func main() {
