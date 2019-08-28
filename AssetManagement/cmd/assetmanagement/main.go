@@ -46,6 +46,11 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/organization/{id}", h.UpdateOrganization).Methods("PUT")
 	router.HandleFunc("/organization/{id}", h.DeleteOrganization).Methods("DELETE")
 
+	router.HandleFunc("/organizationregion", h.CreateOrganizationRegion).Methods("POST")
+	router.HandleFunc("/organizationregion", h.GetAllOrganizationRegion).Methods("GET")
+	router.HandleFunc("/organizationregion/{id}", h.UpdateOrganizationRegion).Methods("PUT")
+	router.HandleFunc("/organizationregion/{id}", h.DeleteOrganizationRegion).Methods("DELETE")
+
 	return router
 }
 

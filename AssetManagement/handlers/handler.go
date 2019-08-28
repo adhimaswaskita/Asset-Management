@@ -34,6 +34,11 @@ type IHandler interface {
 	GetAllOrganization(w http.ResponseWriter, r *http.Request)
 	UpdateOrganization(w http.ResponseWriter, r *http.Request)
 	DeleteOrganization(w http.ResponseWriter, r *http.Request)
+	//Organization Region
+	CreateOrganizationRegion(w http.ResponseWriter, r *http.Request)
+	GetAllOrganizationRegion(w http.ResponseWriter, r *http.Request)
+	UpdateOrganizationRegion(w http.ResponseWriter, r *http.Request)
+	DeleteOrganizationRegion(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler
