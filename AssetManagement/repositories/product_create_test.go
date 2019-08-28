@@ -33,7 +33,6 @@ func TestCreateProduct(t *testing.T) {
 			ManufactureID:     1,
 			ProductTypeID:     1,
 			ProductSupplierID: 1,
-			Manufacturer:      "Product 1 manufacturer",
 			PartNo:            19,
 		}
 
@@ -55,7 +54,6 @@ func TestCreateProduct(t *testing.T) {
 			ManufactureID:     1,
 			ProductTypeID:     1,
 			ProductSupplierID: 1,
-			Manufacturer:      "Product 1 manufacturer",
 			PartNo:            19,
 		}
 
@@ -66,6 +64,6 @@ func TestCreateProduct(t *testing.T) {
 		_, err := repository.CreateProduct(product)
 		if err == nil {
 			t.Errorf("Create product should be failed")
-		} 
+		}
 	})
 }

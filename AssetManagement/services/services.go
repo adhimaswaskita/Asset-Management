@@ -28,6 +28,11 @@ type IService interface {
 	CreateProduct(*nmodel.Product) (*nmodel.Product, error)
 	UpdateProduct(ID uint, Product *nmodel.Product) (*nmodel.Product, error)
 	DeleteProduct(ID uint) error
+	//Organization
+	GetAllOrganization() ([]nmodel.Organization, error)
+	CreateOrganization(*nmodel.Organization) (*nmodel.Organization, error)
+	UpdateOrganization(ID uint, Organization *nmodel.Organization) (*nmodel.Organization, error)
+	DeleteOrganization(ID uint) error
 }
 
 //Service is business logic that implements IService

@@ -41,6 +41,11 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/product/{id}", h.UpdateProduct).Methods("PUT")
 	router.HandleFunc("/product/{id}", h.DeleteProduct).Methods("DELETE")
 
+	router.HandleFunc("/organization", h.CreateOrganization).Methods("POST")
+	router.HandleFunc("/organization", h.GetAllOrganization).Methods("GET")
+	router.HandleFunc("/organization/{id}", h.UpdateOrganization).Methods("PUT")
+	router.HandleFunc("/organization/{id}", h.DeleteOrganization).Methods("DELETE")
+
 	return router
 }
 
@@ -64,7 +69,6 @@ func AutoMigrateDB(repository *nrepo.Repository) {
 	repository.DB.Model(&nmodels.Asset{}).AddForeignKey("product_status_id", "product_statuses(id)", "RESTRICT", "RESTRICT")
 	repository.DB.Model(&nmodels.OrganizationSite{}).AddForeignKey("region_id", "organization_regions(id)", "RESTRICT", "RESTRICT")
 	repository.DB.Model(&nmodels.OrganizationRegion{}).AddForeignKey("organization_id", "organizations(id)", "RESTRICT", "RESTRICT")
-
 }
 
 func main() {
