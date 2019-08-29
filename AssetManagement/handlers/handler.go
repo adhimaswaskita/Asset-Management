@@ -29,6 +29,32 @@ type IHandler interface {
 	GetOneProduct(w http.ResponseWriter, r *http.Request)
 	UpdateProduct(w http.ResponseWriter, r *http.Request)
 	DeleteProduct(w http.ResponseWriter, r *http.Request)
+	//Organization
+	CreateOrganization(w http.ResponseWriter, r *http.Request)
+	GetAllOrganization(w http.ResponseWriter, r *http.Request)
+	UpdateOrganization(w http.ResponseWriter, r *http.Request)
+	DeleteOrganization(w http.ResponseWriter, r *http.Request)
+	//Organization Region
+	CreateOrganizationRegion(w http.ResponseWriter, r *http.Request)
+	GetAllOrganizationRegion(w http.ResponseWriter, r *http.Request)
+	UpdateOrganizationRegion(w http.ResponseWriter, r *http.Request)
+	DeleteOrganizationRegion(w http.ResponseWriter, r *http.Request)
+	//Organization Site
+	CreateOrganizationSite(w http.ResponseWriter, r *http.Request)
+	GetAllOrganizationSite(w http.ResponseWriter, r *http.Request)
+	UpdateOrganizationSite(w http.ResponseWriter, r *http.Request)
+	DeleteOrganizationSite(w http.ResponseWriter, r *http.Request)
+	//ProductStatus
+	CreateProductStatus(w http.ResponseWriter, r *http.Request)
+	GetAllProductStatus(w http.ResponseWriter, r *http.Request)
+	UpdateProductStatus(w http.ResponseWriter, r *http.Request)
+	DeleteProductStatus(w http.ResponseWriter, r *http.Request)
+	//Asset
+	CreateAsset(w http.ResponseWriter, r *http.Request)
+	GetAllAsset(w http.ResponseWriter, r *http.Request)
+	GetOneAsset(w http.ResponseWriter, r *http.Request)
+	UpdateAsset(w http.ResponseWriter, r *http.Request)
+	DeleteAsset(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler

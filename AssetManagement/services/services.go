@@ -28,6 +28,32 @@ type IService interface {
 	CreateProduct(*nmodel.Product) (*nmodel.Product, error)
 	UpdateProduct(ID uint, Product *nmodel.Product) (*nmodel.Product, error)
 	DeleteProduct(ID uint) error
+	//Organization
+	GetAllOrganization() ([]nmodel.Organization, error)
+	CreateOrganization(*nmodel.Organization) (*nmodel.Organization, error)
+	UpdateOrganization(ID uint, Organization *nmodel.Organization) (*nmodel.Organization, error)
+	DeleteOrganization(ID uint) error
+	//OrganizationRegion
+	GetAllOrganizationRegion() ([]nmodel.OrganizationRegion, error)
+	CreateOrganizationRegion(*nmodel.OrganizationRegion) (*nmodel.OrganizationRegion, error)
+	UpdateOrganizationRegion(ID uint, OrganizationRegion *nmodel.OrganizationRegion) (*nmodel.OrganizationRegion, error)
+	DeleteOrganizationRegion(ID uint) error
+	//OrganizationSite
+	GetAllOrganizationSite() ([]nmodel.OrganizationSite, error)
+	CreateOrganizationSite(*nmodel.OrganizationSite) (*nmodel.OrganizationSite, error)
+	UpdateOrganizationSite(ID uint, OrganizationSite *nmodel.OrganizationSite) (*nmodel.OrganizationSite, error)
+	DeleteOrganizationSite(ID uint) error
+	//Product Supplier
+	GetAllProductStatus() ([]nmodel.ProductStatus, error)
+	CreateProductStatus(*nmodel.ProductStatus) (*nmodel.ProductStatus, error)
+	UpdateProductStatus(ID uint, ProductStatus *nmodel.ProductStatus) (*nmodel.ProductStatus, error)
+	DeleteProductStatus(ID uint) error
+	//Asset
+	GetAllAsset() ([]nmodel.Asset, error)
+	GetOneAsset(ID uint) (*nmodel.Asset, error)
+	CreateAsset(*nmodel.Asset) (*nmodel.Asset, error)
+	UpdateAsset(ID uint, Asset *nmodel.Asset) (*nmodel.Asset, error)
+	DeleteAsset(ID uint) error
 }
 
 //Service is business logic that implements IService

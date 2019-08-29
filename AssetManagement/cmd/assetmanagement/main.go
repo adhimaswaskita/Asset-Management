@@ -41,6 +41,32 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/product/{id}", h.UpdateProduct).Methods("PUT")
 	router.HandleFunc("/product/{id}", h.DeleteProduct).Methods("DELETE")
 
+	router.HandleFunc("/organization", h.CreateOrganization).Methods("POST")
+	router.HandleFunc("/organization", h.GetAllOrganization).Methods("GET")
+	router.HandleFunc("/organization/{id}", h.UpdateOrganization).Methods("PUT")
+	router.HandleFunc("/organization/{id}", h.DeleteOrganization).Methods("DELETE")
+
+	router.HandleFunc("/organizationregion", h.CreateOrganizationRegion).Methods("POST")
+	router.HandleFunc("/organizationregion", h.GetAllOrganizationRegion).Methods("GET")
+	router.HandleFunc("/organizationregion/{id}", h.UpdateOrganizationRegion).Methods("PUT")
+	router.HandleFunc("/organizationregion/{id}", h.DeleteOrganizationRegion).Methods("DELETE")
+
+	router.HandleFunc("/organizationsite", h.CreateOrganizationSite).Methods("POST")
+	router.HandleFunc("/organizationsite", h.GetAllOrganizationSite).Methods("GET")
+	router.HandleFunc("/organizationsite/{id}", h.UpdateOrganizationSite).Methods("PUT")
+	router.HandleFunc("/organizationsite/{id}", h.DeleteOrganizationSite).Methods("DELETE")
+
+	router.HandleFunc("/productstatus", h.CreateProductStatus).Methods("POST")
+	router.HandleFunc("/productstatus", h.GetAllProductStatus).Methods("GET")
+	router.HandleFunc("/productstatus/{id}", h.UpdateProductStatus).Methods("PUT")
+	router.HandleFunc("/productstatus/{id}", h.DeleteProductStatus).Methods("DELETE")
+
+	router.HandleFunc("/asset", h.CreateAsset).Methods("POST")
+	router.HandleFunc("/asset", h.GetAllAsset).Methods("GET")
+	router.HandleFunc("/asset/{id}", h.GetOneAsset).Methods("GET")
+	router.HandleFunc("/asset/{id}", h.UpdateAsset).Methods("PUT")
+	router.HandleFunc("/asset/{id}", h.DeleteAsset).Methods("DELETE")
+
 	return router
 }
 
@@ -64,7 +90,6 @@ func AutoMigrateDB(repository *nrepo.Repository) {
 	repository.DB.Model(&nmodels.Asset{}).AddForeignKey("product_status_id", "product_statuses(id)", "RESTRICT", "RESTRICT")
 	repository.DB.Model(&nmodels.OrganizationSite{}).AddForeignKey("region_id", "organization_regions(id)", "RESTRICT", "RESTRICT")
 	repository.DB.Model(&nmodels.OrganizationRegion{}).AddForeignKey("organization_id", "organizations(id)", "RESTRICT", "RESTRICT")
-
 }
 
 func main() {
