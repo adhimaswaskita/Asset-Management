@@ -56,6 +56,17 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/organizationsite/{id}", h.UpdateOrganizationSite).Methods("PUT")
 	router.HandleFunc("/organizationsite/{id}", h.DeleteOrganizationSite).Methods("DELETE")
 
+	router.HandleFunc("/productstatus", h.CreateProductStatus).Methods("POST")
+	router.HandleFunc("/productstatus", h.GetAllProductStatus).Methods("GET")
+	router.HandleFunc("/productstatus/{id}", h.UpdateProductStatus).Methods("PUT")
+	router.HandleFunc("/productstatus/{id}", h.DeleteProductStatus).Methods("DELETE")
+
+	router.HandleFunc("/asset", h.CreateAsset).Methods("POST")
+	router.HandleFunc("/asset", h.GetAllAsset).Methods("GET")
+	router.HandleFunc("/asset/{id}", h.GetOneAsset).Methods("GET")
+	router.HandleFunc("/asset/{id}", h.UpdateAsset).Methods("PUT")
+	router.HandleFunc("/asset/{id}", h.DeleteAsset).Methods("DELETE")
+
 	return router
 }
 

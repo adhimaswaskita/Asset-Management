@@ -50,6 +50,17 @@ type IRepository interface {
 	CreateOrganizationSite(*nmodel.OrganizationSite) (*nmodel.OrganizationSite, error)
 	UpdateOrganizationSite(ID uint, OrganizationSite *nmodel.OrganizationSite) (*nmodel.OrganizationSite, error)
 	DeleteOrganizationSite(ID uint) error
+	//Product Status
+	GetAllProductStatus() ([]nmodel.ProductStatus, error)
+	CreateProductStatus(*nmodel.ProductStatus) (*nmodel.ProductStatus, error)
+	UpdateProductStatus(ID uint, ProductStatus *nmodel.ProductStatus) (*nmodel.ProductStatus, error)
+	DeleteProductStatus(ID uint) error
+	//Product
+	GetAllAsset() ([]nmodel.Asset, error)
+	GetOneAsset(ID uint) (*nmodel.Asset, error)
+	CreateAsset(*nmodel.Asset) (*nmodel.Asset, error)
+	UpdateAsset(ID uint, Asset *nmodel.Asset) (*nmodel.Asset, error)
+	DeleteAsset(ID uint) error
 }
 
 //Repository implements IRepository

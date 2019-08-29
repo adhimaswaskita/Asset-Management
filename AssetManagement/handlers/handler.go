@@ -44,6 +44,17 @@ type IHandler interface {
 	GetAllOrganizationSite(w http.ResponseWriter, r *http.Request)
 	UpdateOrganizationSite(w http.ResponseWriter, r *http.Request)
 	DeleteOrganizationSite(w http.ResponseWriter, r *http.Request)
+	//ProductStatus
+	CreateProductStatus(w http.ResponseWriter, r *http.Request)
+	GetAllProductStatus(w http.ResponseWriter, r *http.Request)
+	UpdateProductStatus(w http.ResponseWriter, r *http.Request)
+	DeleteProductStatus(w http.ResponseWriter, r *http.Request)
+	//Asset
+	CreateAsset(w http.ResponseWriter, r *http.Request)
+	GetAllAsset(w http.ResponseWriter, r *http.Request)
+	GetOneAsset(w http.ResponseWriter, r *http.Request)
+	UpdateAsset(w http.ResponseWriter, r *http.Request)
+	DeleteAsset(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler
