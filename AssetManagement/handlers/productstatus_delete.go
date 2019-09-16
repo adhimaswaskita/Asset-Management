@@ -5,14 +5,12 @@ import (
 	"strconv"
 
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
-	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 	"github.com/gorilla/mux"
 )
 
 //DeleteProductStatus is used to delete product Status by it's ID
 func (h *Handler) DeleteProductStatus(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
-	productStatusParam := &nmodel.ProductStatus{}
 
 	params := mux.Vars(r)
 	id := params["id"]
@@ -26,5 +24,5 @@ func (h *Handler) DeleteProductStatus(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productStatusParam, nil, w)
+	rf.Response(nrf.SUCCESS, uintID, nil, w)
 }

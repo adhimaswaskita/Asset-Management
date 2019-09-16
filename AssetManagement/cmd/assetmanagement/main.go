@@ -67,6 +67,8 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/asset/{id}", h.UpdateAsset).Methods("PUT")
 	router.HandleFunc("/asset/{id}", h.DeleteAsset).Methods("DELETE")
 
+	router.HandleFunc("/assets/total", h.CountAsset).Methods("GET")
+
 	return router
 }
 

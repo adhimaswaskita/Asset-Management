@@ -26,6 +26,9 @@ type DeleteResponse struct {
 	ID interface{} `json:"ID"`
 }
 
+type DashboardResponse struct {
+}
+
 //Response is response format function that implement jsend standard
 func (rf *ResponseFormat) Response(status string, data interface{}, message interface{}, w http.ResponseWriter) {
 	rf.Status = status

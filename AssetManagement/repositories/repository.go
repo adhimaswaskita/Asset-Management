@@ -18,7 +18,7 @@ type IRepository interface {
 	GetAllProductType() ([]nmodel.ProductType, error)
 	CreateProductType(*nmodel.ProductType) (*nmodel.ProductType, error)
 	UpdateProductType(ID uint, ProductType *nmodel.ProductType) (*nmodel.ProductType, error)
-	DeleteProductType(ID int) error
+	DeleteProductType(ID uint) error
 	//Manufacture
 	CreateManufacture(*nmodel.Manufacture) (*nmodel.Manufacture, error)
 	GetAllManufacture() ([]nmodel.Manufacture, error)
@@ -61,6 +61,7 @@ type IRepository interface {
 	CreateAsset(*nmodel.Asset) (*nmodel.Asset, error)
 	UpdateAsset(ID uint, Asset *nmodel.Asset) (*nmodel.Asset, error)
 	DeleteAsset(ID uint) error
+	CountAsset() (int, error)
 }
 
 //Repository implements IRepository

@@ -5,14 +5,12 @@ import (
 	"strconv"
 
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
-	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 	"github.com/gorilla/mux"
 )
 
 //DeleteProductSupplier is used to delete product supplier by it's ID
 func (h *Handler) DeleteProductSupplier(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
-	productSupplierParam := &nmodel.ProductSupplier{}
 
 	params := mux.Vars(r)
 	id := params["id"]
@@ -26,5 +24,5 @@ func (h *Handler) DeleteProductSupplier(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productSupplierParam, nil, w)
+	rf.Response(nrf.SUCCESS, uintID, nil, w)
 }

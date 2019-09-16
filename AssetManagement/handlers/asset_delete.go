@@ -5,14 +5,12 @@ import (
 	"strconv"
 
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
-	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 	"github.com/gorilla/mux"
 )
 
 //DeleteAsset is used to delete Asset  by it's ID
 func (h *Handler) DeleteAsset(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
-	assetParam := &nmodel.Asset{}
 
 	params := mux.Vars(r)
 	id := params["id"]
@@ -26,5 +24,5 @@ func (h *Handler) DeleteAsset(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, assetParam, nil, w)
+	rf.Response(nrf.SUCCESS, uintID, nil, w)
 }
