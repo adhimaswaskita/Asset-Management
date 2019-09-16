@@ -56,6 +56,9 @@ type IHandler interface {
 	UpdateAsset(w http.ResponseWriter, r *http.Request)
 	DeleteAsset(w http.ResponseWriter, r *http.Request)
 	CountAsset(w http.ResponseWriter, r *http.Request)
+	CountAssetInStore(w http.ResponseWriter, r *http.Request)
+	CountAssetInUse(w http.ResponseWriter, r *http.Request)
+	CountAssetInRepair(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler

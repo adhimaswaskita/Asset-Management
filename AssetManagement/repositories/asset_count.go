@@ -1,14 +1,20 @@
 package repositories
 
+import nmodel "github.com/adhimaswaskita/AssetManagement/models"
+
 //CountAsset get one Asset detail from Asset table
-func (r *Repository) CountAsset() (int, error) {
-	// var Asset nmodel.Asset
+func (r *Repository) CountAsset() (*nmodel.Count, error) {
 	var total int
 
 	err := r.DB.Table("assets").Count(&total).Error
 	if err != nil {
-		return -1, err
+		return nil, err
 	}
 
-	return total, nil
+	var count = &nmodel.Count{
+		Name:     "Total Asset",
+		Quantity: total,
+	}
+
+	return count, nil
 }

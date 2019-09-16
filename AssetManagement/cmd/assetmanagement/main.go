@@ -56,10 +56,10 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/organizationsite/{id}", h.UpdateOrganizationSite).Methods("PUT")
 	router.HandleFunc("/organizationsite/{id}", h.DeleteOrganizationSite).Methods("DELETE")
 
-	router.HandleFunc("/productstatus", h.CreateProductStatus).Methods("POST")
-	router.HandleFunc("/productstatus", h.GetAllProductStatus).Methods("GET")
-	router.HandleFunc("/productstatus/{id}", h.UpdateProductStatus).Methods("PUT")
-	router.HandleFunc("/productstatus/{id}", h.DeleteProductStatus).Methods("DELETE")
+	router.HandleFunc("/status", h.CreateProductStatus).Methods("POST")
+	router.HandleFunc("/status", h.GetAllProductStatus).Methods("GET")
+	router.HandleFunc("/status/{id}", h.UpdateProductStatus).Methods("PUT")
+	router.HandleFunc("/status/{id}", h.DeleteProductStatus).Methods("DELETE")
 
 	router.HandleFunc("/asset", h.CreateAsset).Methods("POST")
 	router.HandleFunc("/asset", h.GetAllAsset).Methods("GET")
@@ -68,6 +68,9 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/asset/{id}", h.DeleteAsset).Methods("DELETE")
 
 	router.HandleFunc("/assets/total", h.CountAsset).Methods("GET")
+	router.HandleFunc("/assets/instore/total", h.CountAssetInStore).Methods("GET")
+	router.HandleFunc("/assets/inuse/total", h.CountAssetInUse).Methods("GET")
+	router.HandleFunc("/assets/inrepair/total", h.CountAssetInRepair).Methods("GET")
 
 	return router
 }
