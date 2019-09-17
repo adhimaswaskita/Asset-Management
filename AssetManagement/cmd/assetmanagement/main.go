@@ -72,6 +72,14 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/assets/inuse/total", h.CountAssetInUse).Methods("GET")
 	router.HandleFunc("/assets/inrepair/total", h.CountAssetInRepair).Methods("GET")
 
+	router.HandleFunc("/assets/it/total", h.AssetIT).Methods("GET")
+	router.HandleFunc("/assets/it/topfive", h.AssetITTopFive).Methods("GET")
+	router.HandleFunc("/assets/it/other", h.AssetITOther).Methods("GET")
+
+	router.HandleFunc("/assets/nonit/total", h.AssetNonIT).Methods("GET")
+	router.HandleFunc("/assets/nonit/topfive", h.AssetNonITTopFive).Methods("GET")
+	router.HandleFunc("/assets/nonit/other", h.AssetNonITOther).Methods("GET")
+
 	return router
 }
 

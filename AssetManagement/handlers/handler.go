@@ -59,6 +59,12 @@ type IHandler interface {
 	CountAssetInStore(w http.ResponseWriter, r *http.Request)
 	CountAssetInUse(w http.ResponseWriter, r *http.Request)
 	CountAssetInRepair(w http.ResponseWriter, r *http.Request)
+	AssetIT(w http.ResponseWriter, r *http.Request)
+	AssetITTopFive(w http.ResponseWriter, r *http.Request)
+	AssetITOther(w http.ResponseWriter, r *http.Request)
+	AssetNonIT(w http.ResponseWriter, r *http.Request)
+	AssetNonITTopFive(w http.ResponseWriter, r *http.Request)
+	AssetNonITOther(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler
