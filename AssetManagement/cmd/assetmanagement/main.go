@@ -80,6 +80,9 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/assets/nonit/topfive", h.AssetNonITTopFive).Methods("GET")
 	router.HandleFunc("/assets/nonit/other", h.AssetNonITOther).Methods("GET")
 
+	router.HandleFunc("/assets/region/bar", h.AssetByRegion).Methods("GET")
+	router.HandleFunc("/assets/site/bar", h.AssetBySite).Methods("GET")
+
 	return router
 }
 

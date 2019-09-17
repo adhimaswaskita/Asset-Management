@@ -65,6 +65,8 @@ type IHandler interface {
 	AssetNonIT(w http.ResponseWriter, r *http.Request)
 	AssetNonITTopFive(w http.ResponseWriter, r *http.Request)
 	AssetNonITOther(w http.ResponseWriter, r *http.Request)
+	AssetByRegion(w http.ResponseWriter, r *http.Request)
+	AssetBySite(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler

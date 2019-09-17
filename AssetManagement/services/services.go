@@ -64,6 +64,8 @@ type IService interface {
 	AssetNonIT() (*[]nmodel.Dashboard, error)
 	AssetNonITTopFive() (*[]nmodel.Dashboard, error)
 	AssetNonITOther() (*nmodel.Dashboard, error)
+	AssetByRegion() (*[]nmodel.Dashboard, error)
+	AssetBySite() (*[]nmodel.Dashboard, error)
 }
 
 //Service is business logic that implements IService

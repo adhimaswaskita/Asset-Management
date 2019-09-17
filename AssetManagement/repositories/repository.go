@@ -67,6 +67,8 @@ type IRepository interface {
 	CountAssetInRepair() (*nmodel.Dashboard, error)
 	AssetIT() (*[]nmodel.Dashboard, error)
 	AssetNonIT() (*[]nmodel.Dashboard, error)
+	AssetByRegion() (*[]nmodel.Dashboard, error)
+	AssetBySite() (*[]nmodel.Dashboard, error)
 }
 
 //Repository implements IRepository
