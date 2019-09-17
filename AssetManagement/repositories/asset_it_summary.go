@@ -3,8 +3,8 @@ package repositories
 import nmodel "github.com/adhimaswaskita/AssetManagement/models"
 
 //AssetIT get one Asset detail from Asset table
-func (r *Repository) AssetIT() (*[]nmodel.AssetSummary, error) {
-	var AssetSummary []nmodel.AssetSummary
+func (r *Repository) AssetIT() (*[]nmodel.Dashboard, error) {
+	var AssetSummary []nmodel.Dashboard
 	err := r.DB.Raw(`
 	SELECT assets.name, COUNT(*) as quantity 
 		FROM assets 

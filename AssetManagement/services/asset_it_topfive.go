@@ -5,8 +5,8 @@ import (
 )
 
 //AssetITTopFive is business logic for get all Asset
-func (s *Service) AssetITTopFive() (*[]nmodel.AssetSummary, error) {
-	var LimitedAsset []nmodel.AssetSummary
+func (s *Service) AssetITTopFive() (*[]nmodel.Dashboard, error) {
+	var LimitedAsset []nmodel.Dashboard
 	assets, err := s.Repository.AssetIT()
 	if err != nil {
 		return nil, err

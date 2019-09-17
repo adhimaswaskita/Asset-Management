@@ -54,16 +54,16 @@ type IService interface {
 	CreateAsset(*nmodel.Asset) (*nmodel.Asset, error)
 	UpdateAsset(ID uint, Asset *nmodel.Asset) (*nmodel.Asset, error)
 	DeleteAsset(ID uint) error
-	CountAsset() (*nmodel.StatusCount, error)
-	CountAssetInStore() (*nmodel.StatusCount, error)
-	CountAssetInUse() (*nmodel.StatusCount, error)
-	CountAssetInRepair() (*nmodel.StatusCount, error)
-	AssetIT() (*[]nmodel.AssetSummary, error)
-	AssetITTopFive() (*[]nmodel.AssetSummary, error)
-	AssetITOther() (*nmodel.AssetSummary, error)
-	AssetNonIT() (*[]nmodel.AssetSummary, error)
-	AssetNonITTopFive() (*[]nmodel.AssetSummary, error)
-	AssetNonITOther() (*nmodel.AssetSummary, error)
+	CountAsset() (*nmodel.Dashboard, error)
+	CountAssetInStore() (*nmodel.Dashboard, error)
+	CountAssetInUse() (*nmodel.Dashboard, error)
+	CountAssetInRepair() (*nmodel.Dashboard, error)
+	AssetIT() (*[]nmodel.Dashboard, error)
+	AssetITTopFive() (*[]nmodel.Dashboard, error)
+	AssetITOther() (*nmodel.Dashboard, error)
+	AssetNonIT() (*[]nmodel.Dashboard, error)
+	AssetNonITTopFive() (*[]nmodel.Dashboard, error)
+	AssetNonITOther() (*nmodel.Dashboard, error)
 }
 
 //Service is business logic that implements IService

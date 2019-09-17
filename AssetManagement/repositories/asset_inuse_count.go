@@ -3,7 +3,7 @@ package repositories
 import nmodel "github.com/adhimaswaskita/AssetManagement/models"
 
 //CountAssetInUse get one Asset detail from Asset table
-func (r *Repository) CountAssetInUse() (*nmodel.StatusCount, error) {
+func (r *Repository) CountAssetInUse() (*nmodel.Dashboard, error) {
 	var total int
 
 	err := r.DB.Table("assets").Where("product_status_id = ?", 4).Count(&total).Error
@@ -11,7 +11,7 @@ func (r *Repository) CountAssetInUse() (*nmodel.StatusCount, error) {
 		return nil, err
 	}
 
-	var count = &nmodel.StatusCount{
+	var count = &nmodel.Dashboard{
 		Name:     "In Use",
 		Quantity: total,
 	}

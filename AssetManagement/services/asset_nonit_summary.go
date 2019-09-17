@@ -5,7 +5,7 @@ import (
 )
 
 //AssetNonIT is business logic for get all Asset
-func (s *Service) AssetNonIT() (*[]nmodel.AssetSummary, error) {
+func (s *Service) AssetNonIT() (*[]nmodel.Dashboard, error) {
 	assets, err := s.Repository.AssetNonIT()
 	if err != nil {
 		return nil, err

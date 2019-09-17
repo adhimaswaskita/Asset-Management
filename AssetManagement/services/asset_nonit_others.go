@@ -5,7 +5,7 @@ import (
 )
 
 //AssetNonITOther is business logic for get all Asset
-func (s *Service) AssetNonITOther() (*nmodel.AssetSummary, error) {
+func (s *Service) AssetNonITOther() (*nmodel.Dashboard, error) {
 	quantityContainer := 0
 
 	assets, err := s.Repository.AssetNonIT()
@@ -19,7 +19,7 @@ func (s *Service) AssetNonITOther() (*nmodel.AssetSummary, error) {
 		}
 	}
 
-	OtherAsset := nmodel.AssetSummary{
+	OtherAsset := nmodel.Dashboard{
 		Name:     "Others",
 		Quantity: quantityContainer,
 	}

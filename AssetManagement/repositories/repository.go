@@ -61,12 +61,12 @@ type IRepository interface {
 	CreateAsset(*nmodel.Asset) (*nmodel.Asset, error)
 	UpdateAsset(ID uint, Asset *nmodel.Asset) (*nmodel.Asset, error)
 	DeleteAsset(ID uint) error
-	CountAsset() (*nmodel.StatusCount, error)
-	CountAssetInStore() (*nmodel.StatusCount, error)
-	CountAssetInUse() (*nmodel.StatusCount, error)
-	CountAssetInRepair() (*nmodel.StatusCount, error)
-	AssetIT() (*[]nmodel.AssetSummary, error)
-	AssetNonIT() (*[]nmodel.AssetSummary, error)
+	CountAsset() (*nmodel.Dashboard, error)
+	CountAssetInStore() (*nmodel.Dashboard, error)
+	CountAssetInUse() (*nmodel.Dashboard, error)
+	CountAssetInRepair() (*nmodel.Dashboard, error)
+	AssetIT() (*[]nmodel.Dashboard, error)
+	AssetNonIT() (*[]nmodel.Dashboard, error)
 }
 
 //Repository implements IRepository
