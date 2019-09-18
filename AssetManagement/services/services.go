@@ -60,12 +60,11 @@ type IService interface {
 	CountAssetInRepair() (*nmodel.Dashboard, error)
 	AssetIT() (*[]nmodel.Dashboard, error)
 	AssetITTopFive() (*[]nmodel.Dashboard, error)
-	AssetITOther() (*nmodel.Dashboard, error)
 	AssetNonIT() (*[]nmodel.Dashboard, error)
 	AssetNonITTopFive() (*[]nmodel.Dashboard, error)
-	AssetNonITOther() (*nmodel.Dashboard, error)
 	AssetByRegion() (*[]nmodel.Dashboard, error)
 	AssetBySite() (*[]nmodel.Dashboard, error)
+	AssetStatistics(year int) (*[]nmodel.Statistics, error)
 }
 
 //Service is business logic that implements IService

@@ -69,6 +69,7 @@ type IRepository interface {
 	AssetNonIT() (*[]nmodel.Dashboard, error)
 	AssetByRegion() (*[]nmodel.Dashboard, error)
 	AssetBySite() (*[]nmodel.Dashboard, error)
+	AssetStatistics(year int) (*[]nmodel.Statistics, error)
 }
 
 //Repository implements IRepository
