@@ -5,10 +5,10 @@ import nmodel "github.com/adhimaswaskita/AssetManagement/models"
 //UpdateProduct is bussiness logic for product  update
 func (s *Service) UpdateProduct(ID uint, Product *nmodel.Product) (*nmodel.Product, error) {
 
-	products, err := s.Repository.UpdateProduct(ID, Product)
+	result, err := s.Repository.UpdateProduct(ID, Product)
 	if err != nil {
 		return nil, err
 	}
 
-	return products, nil
+	return result, nil
 }

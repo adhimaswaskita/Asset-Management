@@ -6,7 +6,7 @@ import (
 
 //TopFiveITAssets is business logic for get all Asset
 func (s *Service) TopFiveITAssets() (*[]nmodel.Dashboard, error) {
-	var assetResult []nmodel.Dashboard
+	var result []nmodel.Dashboard
 	assets, err := s.Repository.ITAssetSummary()
 	if err != nil {
 		return nil, err
@@ -18,13 +18,13 @@ func (s *Service) TopFiveITAssets() (*[]nmodel.Dashboard, error) {
 	}
 	for i, asset := range *assets {
 		if i < 5 {
-			assetResult = append(assetResult, asset)
+			result = append(result, asset)
 		} else {
 			OthersAsset.Quantity += asset.Quantity
 		}
 	}
 
-	assetResult = append(assetResult, OthersAsset)
+	result = append(result, OthersAsset)
 
-	return &assetResult, nil
+	return &result, nil
 }

@@ -6,10 +6,10 @@ import (
 
 //NonITAssetSummary is business logic for get all Asset
 func (s *Service) NonITAssetSummary() (*[]nmodel.Dashboard, error) {
-	assets, err := s.Repository.NonITAssetSummary()
+	result, err := s.Repository.NonITAssetSummary()
 	if err != nil {
 		return nil, err
 	}
 
-	return assets, nil
+	return result, nil
 }

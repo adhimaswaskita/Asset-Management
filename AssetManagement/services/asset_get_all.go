@@ -6,10 +6,10 @@ import (
 
 //GetAllAsset is business logic for get all Asset
 func (s *Service) GetAllAsset() ([]nmodel.Asset, error) {
-	assets, err := s.Repository.GetAllAsset()
+	result, err := s.Repository.GetAllAsset()
 	if err != nil {
 		return nil, err
 	}
 
-	return assets, nil
+	return result, nil
 }

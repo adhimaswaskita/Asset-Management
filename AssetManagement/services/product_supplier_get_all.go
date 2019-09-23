@@ -6,10 +6,10 @@ import (
 
 //GetAllProductSupplier is business logic for get all product supplier
 func (s *Service) GetAllProductSupplier() ([]nmodel.ProductSupplier, error) {
-	productSuppliers, err := s.Repository.GetAllProductSupplier()
+	result, err := s.Repository.GetAllProductSupplier()
 	if err != nil {
 		return nil, err
 	}
 
-	return productSuppliers, nil
+	return result, nil
 }

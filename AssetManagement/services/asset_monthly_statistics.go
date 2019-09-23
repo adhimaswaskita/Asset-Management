@@ -8,7 +8,7 @@ import (
 
 //AssetStatistics is business logic for get all Asset
 func (s *Service) AssetStatistics(year int) (*[]nmodel.Statistics, error) {
-	var AssetResult []nmodel.Statistics
+	var result []nmodel.Statistics
 	assets, err := s.Repository.AssetStatistics(year)
 
 	months := [12]string{"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DES"}
@@ -22,8 +22,8 @@ func (s *Service) AssetStatistics(year int) (*[]nmodel.Statistics, error) {
 			return nil, err
 		}
 		asset.Month = months[intMonth-1]
-		AssetResult = append(AssetResult, asset)
+		result = append(result, asset)
 	}
 
-	return &AssetResult, nil
+	return &result, nil
 }

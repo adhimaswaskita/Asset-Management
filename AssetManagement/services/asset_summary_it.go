@@ -6,10 +6,10 @@ import (
 
 //ITAssetSummary is business logic for get all Asset
 func (s *Service) ITAssetSummary() (*[]nmodel.Dashboard, error) {
-	assets, err := s.Repository.ITAssetSummary()
+	result, err := s.Repository.ITAssetSummary()
 	if err != nil {
 		return nil, err
 	}
 
-	return assets, nil
+	return result, nil
 }
