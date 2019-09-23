@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Run this command before run the app
 
-For the first step, we need to build the app image and database image  
+For the first step, we need open the project folder then build the app image and database image using these commands :
 
 ```
 docker build --target asset_management_app -t am_app .
