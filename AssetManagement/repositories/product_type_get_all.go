@@ -5,8 +5,8 @@ import (
 )
 
 //GetAllProductType get all product type from database
-func (r *Repository) GetAllProductType() (p []nmodel.ProductType, err error) {
-	r.DB.Find(&p)
+func (r *Repository) GetAllProductType() (mProductType []nmodel.ProductType, err error) {
+	r.DB.Find(&mProductType)
 
-	return p, nil
+	return mProductType, nil
 }

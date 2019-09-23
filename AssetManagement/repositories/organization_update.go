@@ -5,13 +5,13 @@ import (
 )
 
 //UpdateOrganization is used to save updated data to database
-func (r *Repository) UpdateOrganization(ID uint, Organization *nmodel.Organization) (*nmodel.Organization, error) {
-	var organizationParam nmodel.Organization
+func (r *Repository) UpdateOrganization(ID uint, mOrganization *nmodel.Organization) (*nmodel.Organization, error) {
+	var mpOrganization nmodel.Organization
 
-	err := r.DB.Model(&organizationParam).Where("ID = ?", ID).First(&organizationParam).Updates(Organization).Error
+	err := r.DB.Model(&mpOrganization).Where("ID = ?", ID).First(&mpOrganization).Updates(mOrganization).Error
 	if err != nil {
 		return nil, err
 	}
 
-	return Organization, nil
+	return mOrganization, nil
 }

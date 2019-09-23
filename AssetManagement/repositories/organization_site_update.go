@@ -5,13 +5,13 @@ import (
 )
 
 //UpdateOrganizationSite is used to save updated data to database
-func (r *Repository) UpdateOrganizationSite(ID uint, organizationSite *nmodel.OrganizationSite) (*nmodel.OrganizationSite, error) {
-	var organizationSiteParam nmodel.OrganizationSite
+func (r *Repository) UpdateOrganizationSite(ID uint, mOrganization *nmodel.OrganizationSite) (*nmodel.OrganizationSite, error) {
+	var mpOrganization nmodel.OrganizationSite
 
-	err := r.DB.Model(&organizationSiteParam).Where("ID = ?", ID).First(&organizationSiteParam).Updates(organizationSite).Error
+	err := r.DB.Model(&mpOrganization).Where("ID = ?", ID).First(&mpOrganization).Updates(mOrganization).Error
 	if err != nil {
 		return nil, err
 	}
 
-	return organizationSite, nil
+	return mOrganization, nil
 }

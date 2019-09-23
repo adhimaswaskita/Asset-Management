@@ -6,8 +6,8 @@ import (
 
 //DeleteOrganizationSite is used to delete OrganizationSite data from database
 func (r *Repository) DeleteOrganizationSite(ID uint) error {
-	OrganizationSite := nmodel.OrganizationSite{}
-	err := r.DB.Where("ID = ?", ID).First(&OrganizationSite).Delete(&OrganizationSite).Error
+	mOrganization := nmodel.OrganizationSite{}
+	err := r.DB.Where("ID = ?", ID).First(&mOrganization).Delete(&mOrganization).Error
 
 	if err != nil {
 		return err

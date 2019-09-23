@@ -3,8 +3,8 @@ package repositories
 import nmodel "github.com/adhimaswaskita/AssetManagement/models"
 
 //GetAllProductSupplier is used to get all manfacture data from database
-func (r *Repository) GetAllProductSupplier() (productSupplier []nmodel.ProductSupplier, err error) {
-	r.DB.Find(&productSupplier)
+func (r *Repository) GetAllProductSupplier() (mProductSupplier []nmodel.ProductSupplier, err error) {
+	r.DB.Find(&mProductSupplier)
 
-	return productSupplier, nil
+	return mProductSupplier, nil
 }

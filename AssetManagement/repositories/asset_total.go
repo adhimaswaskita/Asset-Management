@@ -4,16 +4,16 @@ import nmodel "github.com/adhimaswaskita/AssetManagement/models"
 
 //TotalAsset get one Asset detail from Asset table
 func (r *Repository) TotalAsset() (*nmodel.Dashboard, error) {
-	var assetTotal int
+	var total int
 
-	err := r.DB.Table("assets").Count(&assetTotal).Error
+	err := r.DB.Table("assets").Count(&total).Error
 	if err != nil {
 		return nil, err
 	}
 
 	var result = &nmodel.Dashboard{
 		Name:     "Total Asset",
-		Quantity: assetTotal,
+		Quantity: total,
 	}
 
 	return result, nil

@@ -5,13 +5,13 @@ import (
 )
 
 //UpdateProductType ...
-func (r *Repository) UpdateProductType(ID uint, productType *nmodel.ProductType) (*nmodel.ProductType, error) {
-	var productTypeParam nmodel.ProductType
+func (r *Repository) UpdateProductType(ID uint, mProductType *nmodel.ProductType) (*nmodel.ProductType, error) {
+	var mpProductType nmodel.ProductType
 
-	err := r.DB.Model(&productTypeParam).Where("ID = ?", ID).First(&productTypeParam).Updates(productType).Error
+	err := r.DB.Model(&mpProductType).Where("ID = ?", ID).First(&mpProductType).Updates(mProductType).Error
 	if err != nil {
 		return nil, err
 	}
 
-	return productType, nil
+	return mProductType, nil
 }

@@ -6,8 +6,8 @@ import (
 
 //DeleteManufacture is used to delete manufacture data from database
 func (r *Repository) DeleteManufacture(ID uint) error {
-	manufacture := nmodel.Manufacture{}
-	err := r.DB.Where("ID = ?", ID).First(&manufacture).Delete(&manufacture).Error
+	mManufacture := nmodel.Manufacture{}
+	err := r.DB.Where("ID = ?", ID).First(&mManufacture).Delete(&mManufacture).Error
 
 	if err != nil {
 		return err

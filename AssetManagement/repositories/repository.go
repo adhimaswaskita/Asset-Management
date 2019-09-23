@@ -98,7 +98,6 @@ func NewRepository(repoConfig *nconfig.Repository) (*Repository, error) {
 	if err != nil {
 		return nil, err
 	}
-	// defer db.Close()
 
 	repository := &Repository{
 		DB: db,

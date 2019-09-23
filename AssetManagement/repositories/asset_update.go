@@ -5,12 +5,12 @@ import (
 )
 
 //UpdateAsset is used to save updated data to database
-func (r *Repository) UpdateAsset(ID uint, Asset *nmodel.Asset) (*nmodel.Asset, error) {
-	var assetParam nmodel.Asset
+func (r *Repository) UpdateAsset(ID uint, mAsset *nmodel.Asset) (*nmodel.Asset, error) {
+	var mpAsset nmodel.Asset
 
-	err := r.DB.Model(&assetParam).Where("ID = ?", ID).First(&assetParam).Updates(Asset).Error
+	err := r.DB.Model(&mpAsset).Where("ID = ?", ID).First(&mpAsset).Updates(mAsset).Error
 	if err != nil {
 		return nil, err
 	}
-	return Asset, nil
+	return mAsset, nil
 }

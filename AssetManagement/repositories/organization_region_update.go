@@ -5,13 +5,13 @@ import (
 )
 
 //UpdateOrganizationRegion is used to save updated data to database
-func (r *Repository) UpdateOrganizationRegion(ID uint, organizationRegion *nmodel.OrganizationRegion) (*nmodel.OrganizationRegion, error) {
-	var organizationRegionParam nmodel.OrganizationRegion
+func (r *Repository) UpdateOrganizationRegion(ID uint, mOrganization *nmodel.OrganizationRegion) (*nmodel.OrganizationRegion, error) {
+	var mpOrganization nmodel.OrganizationRegion
 
-	err := r.DB.Model(&organizationRegionParam).Where("ID = ?", ID).First(&organizationRegionParam).Updates(organizationRegion).Error
+	err := r.DB.Model(&mpOrganization).Where("ID = ?", ID).First(&mpOrganization).Updates(mOrganization).Error
 	if err != nil {
 		return nil, err
 	}
 
-	return organizationRegion, nil
+	return mOrganization, nil
 }
