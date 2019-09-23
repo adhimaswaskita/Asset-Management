@@ -16,12 +16,12 @@ func (h *Handler) CreateAsset(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	_ = decoder.Decode(assetParam)
 
-	Asset, err := h.Service.CreateAsset(assetParam)
+	result, err := h.Service.CreateAsset(assetParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, Asset, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }

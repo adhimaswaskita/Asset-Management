@@ -13,18 +13,18 @@ func (h *Handler) GetOneAsset(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
 	params := mux.Vars(r)
-	id := params["id"]
+	ID := params["id"]
 
-	intID, _ := strconv.Atoi(id)
-	ID := uint(intID)
+	intID, _ := strconv.Atoi(ID)
+	uintID := uint(intID)
 
-	Asset, err := h.Service.GetOneAsset(ID)
+	result, err := h.Service.GetOneAsset(uintID)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, Asset, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 	return
 }

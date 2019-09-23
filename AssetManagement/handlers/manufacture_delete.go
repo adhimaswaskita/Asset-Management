@@ -13,11 +13,11 @@ func (h *Handler) DeleteManufacture(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
 	params := mux.Vars(r)
-	id := params["id"]
+	ID := params["id"]
 
-	intID, _ := strconv.Atoi(id)
-	ID := uint(intID)
-	err := h.Service.DeleteManufacture(ID)
+	intID, _ := strconv.Atoi(ID)
+	uintID := uint(intID)
+	err := h.Service.DeleteManufacture(uintID)
 
 	if err != nil {
 		stringErr := err.Error()

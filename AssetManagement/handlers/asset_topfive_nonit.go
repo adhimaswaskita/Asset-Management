@@ -10,13 +10,13 @@ import (
 func (h *Handler) TopFiveNonITAssets(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	assets, err := h.Service.TopFiveNonITAssets()
+	result, err := h.Service.TopFiveNonITAssets()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, assets, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 	return
 }

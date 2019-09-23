@@ -17,20 +17,20 @@ func (h *Handler) UpdateProductType(w http.ResponseWriter, r *http.Request) {
 	productTypeParam := &nmodel.ProductType{}
 
 	params := mux.Vars(r)
-	id := params["id"]
+	ID := params["id"]
 
-	intID, _ := strconv.Atoi(id)
-	ID := uint(intID)
+	intID, _ := strconv.Atoi(ID)
+	uintID := uint(intID)
 
 	decoder := json.NewDecoder(r.Body)
 	decoder.Decode(productTypeParam)
 
-	productType, err := h.Service.UpdateProductType(ID, productTypeParam)
+	result, err := h.Service.UpdateProductType(uintID, productTypeParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productType, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }

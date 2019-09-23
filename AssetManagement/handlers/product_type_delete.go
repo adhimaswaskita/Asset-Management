@@ -13,9 +13,9 @@ func (h *Handler) DeleteProductType(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
 	params := mux.Vars(r)
-	id := params["id"]
+	ID := params["id"]
 
-	intID, _ := strconv.Atoi(id)
+	intID, _ := strconv.Atoi(ID)
 	uintID := uint(intID)
 	err := h.Service.DeleteProductType(uintID)
 	if err != nil {

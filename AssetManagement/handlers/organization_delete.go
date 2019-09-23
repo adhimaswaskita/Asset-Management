@@ -16,8 +16,8 @@ func (h *Handler) DeleteOrganization(w http.ResponseWriter, r *http.Request) {
 	id := params["id"]
 
 	intID, _ := strconv.Atoi(id)
-	ID := uint(intID)
-	err := h.Service.DeleteOrganization(ID)
+	uintID := uint(intID)
+	err := h.Service.DeleteOrganization(uintID)
 
 	if err != nil {
 		stringErr := err.Error()
@@ -25,5 +25,5 @@ func (h *Handler) DeleteOrganization(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, ID, nil, w)
+	rf.Response(nrf.SUCCESS, uintID, nil, w)
 }

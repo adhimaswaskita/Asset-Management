@@ -10,13 +10,13 @@ import (
 func (h *Handler) GetAllProductType(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	productTypes, err := h.Service.GetAllProductType()
+	result, err := h.Service.GetAllProductType()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productTypes, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 	return
 }

@@ -17,13 +17,13 @@ func (h *Handler) AssetStatistics(w http.ResponseWriter, r *http.Request) {
 
 	year, _ := strconv.Atoi(yearString)
 
-	assets, err := h.Service.AssetStatistics(year)
+	result, err := h.Service.AssetStatistics(year)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, assets, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 	return
 }

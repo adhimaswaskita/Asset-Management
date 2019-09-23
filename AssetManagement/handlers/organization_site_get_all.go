@@ -10,13 +10,13 @@ import (
 func (h *Handler) GetAllOrganizationSite(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	organizationSites, err := h.Service.GetAllOrganizationSite()
+	result, err := h.Service.GetAllOrganizationSite()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, organizationSites, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 	return
 }

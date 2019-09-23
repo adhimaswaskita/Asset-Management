@@ -13,18 +13,18 @@ func (h *Handler) GetOneProduct(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
 	params := mux.Vars(r)
-	id := params["id"]
+	ID := params["id"]
 
-	intID, _ := strconv.Atoi(id)
-	ID := uint(intID)
+	intID, _ := strconv.Atoi(ID)
+	uintID := uint(intID)
 
-	product, err := h.Service.GetOneProduct(ID)
+	result, err := h.Service.GetOneProduct(uintID)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, product, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 	return
 }

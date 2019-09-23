@@ -16,12 +16,12 @@ func (h *Handler) CreateProductSupplier(w http.ResponseWriter, r *http.Request) 
 	decoder := json.NewDecoder(r.Body)
 	_ = decoder.Decode(productSupplierParam)
 
-	productSupplier, err := h.Service.CreateProductSupplier(productSupplierParam)
+	result, err := h.Service.CreateProductSupplier(productSupplierParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productSupplier, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }

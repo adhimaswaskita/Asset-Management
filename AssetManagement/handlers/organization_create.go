@@ -16,12 +16,12 @@ func (h *Handler) CreateOrganization(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	_ = decoder.Decode(organizationParam)
 
-	organization, err := h.Service.CreateOrganization(organizationParam)
+	result, err := h.Service.CreateOrganization(organizationParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, organization, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }

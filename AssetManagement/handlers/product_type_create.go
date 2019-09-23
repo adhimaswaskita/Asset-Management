@@ -16,12 +16,12 @@ func (h *Handler) CreateProductType(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	_ = decoder.Decode(productTypeParam)
 
-	productType, err := h.Service.CreateProductType(productTypeParam)
+	result, err := h.Service.CreateProductType(productTypeParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productType, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }

@@ -10,13 +10,13 @@ import (
 func (h *Handler) TotalInUseAsset(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	total, err := h.Service.TotalInUseAsset()
+	result, err := h.Service.TotalInUseAsset()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, total, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 	return
 }

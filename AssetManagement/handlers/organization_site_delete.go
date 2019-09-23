@@ -13,11 +13,11 @@ func (h *Handler) DeleteOrganizationSite(w http.ResponseWriter, r *http.Request)
 	rf := nrf.ResponseFormat{}
 
 	params := mux.Vars(r)
-	id := params["id"]
+	ID := params["id"]
 
-	intID, _ := strconv.Atoi(id)
-	ID := uint(intID)
-	err := h.Service.DeleteOrganizationSite(ID)
+	intID, _ := strconv.Atoi(ID)
+	uintID := uint(intID)
+	err := h.Service.DeleteOrganizationSite(uintID)
 
 	if err != nil {
 		stringErr := err.Error()
@@ -25,5 +25,5 @@ func (h *Handler) DeleteOrganizationSite(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, ID, nil, w)
+	rf.Response(nrf.SUCCESS, uintID, nil, w)
 }

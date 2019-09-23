@@ -16,12 +16,12 @@ func (h *Handler) CreateOrganizationRegion(w http.ResponseWriter, r *http.Reques
 	decoder := json.NewDecoder(r.Body)
 	_ = decoder.Decode(organizationRegionParam)
 
-	organizationRegion, err := h.Service.CreateOrganizationRegion(organizationRegionParam)
+	result, err := h.Service.CreateOrganizationRegion(organizationRegionParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, organizationRegion, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }

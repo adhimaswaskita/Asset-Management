@@ -16,12 +16,12 @@ func (h *Handler) CreateProductStatus(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	_ = decoder.Decode(productStatusParam)
 
-	productStatus, err := h.Service.CreateProductStatus(productStatusParam)
+	result, err := h.Service.CreateProductStatus(productStatusParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, productStatus, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }

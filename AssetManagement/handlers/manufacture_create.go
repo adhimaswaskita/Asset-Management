@@ -16,12 +16,12 @@ func (h *Handler) CreateManufacture(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	_ = decoder.Decode(manufactureParam)
 
-	manufacture, err := h.Service.CreateManufacture(manufactureParam)
+	result, err := h.Service.CreateManufacture(manufactureParam)
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, manufacture, nil, w)
+	rf.Response(nrf.SUCCESS, result, nil, w)
 }
