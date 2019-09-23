@@ -25,8 +25,8 @@ docker build --target asset_management_db -t am_db .
 
 ### Running The Project
 
-      1. Go to the project directory
-      2. Open _scripts/docker-compose folder
-      3. Run the docker container ```docker-compose up```
+   1. Go to the project directory
+   2. Open _scripts/docker-compose folder
+   3. Run the docker container ```docker-compose up```
 
 Thank you for last three months.
