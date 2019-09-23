@@ -28,5 +28,6 @@ docker build --target asset_management_db -t am_db .
    1. Go to the project directory
    2. Open _scripts/docker-compose folder
    3. Run the docker container ```docker-compose up```
+   4. Open the app on 'localhost:8080'
 
-Thank you for last three months.
+Thank you for last three months, enjoy.
