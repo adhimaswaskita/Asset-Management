@@ -67,19 +67,19 @@ func NewRouter(h nhandlers.IHandler) *mux.Router {
 	router.HandleFunc("/asset/{id}", h.UpdateAsset).Methods("PUT")
 	router.HandleFunc("/asset/{id}", h.DeleteAsset).Methods("DELETE")
 
-	router.HandleFunc("/assets/total", h.CountAsset).Methods("GET")
-	router.HandleFunc("/assets/instore/total", h.CountAssetInStore).Methods("GET")
-	router.HandleFunc("/assets/inuse/total", h.CountAssetInUse).Methods("GET")
-	router.HandleFunc("/assets/inrepair/total", h.CountAssetInRepair).Methods("GET")
+	router.HandleFunc("/assets/total", h.TotalAsset).Methods("GET")
+	router.HandleFunc("/assets/instore/summary", h.TotalInStoreAsset).Methods("GET")
+	router.HandleFunc("/assets/inuse/summary", h.TotalInUseAsset).Methods("GET")
+	router.HandleFunc("/assets/inrepair/summary", h.TotalInRepairAsset).Methods("GET")
 
-	router.HandleFunc("/assets/it/total", h.AssetIT).Methods("GET")
-	router.HandleFunc("/assets/it/topfive", h.AssetITTopFive).Methods("GET")
+	router.HandleFunc("/assets/it/summary", h.ITAssetSummary).Methods("GET")
+	router.HandleFunc("/assets/it/topfive", h.TopFiveITAssets).Methods("GET")
 
-	router.HandleFunc("/assets/nonit/total", h.AssetNonIT).Methods("GET")
-	router.HandleFunc("/assets/nonit/topfive", h.AssetNonITTopFive).Methods("GET")
+	router.HandleFunc("/assets/nonit/summary", h.NonITAssetSummary).Methods("GET")
+	router.HandleFunc("/assets/nonit/topfive", h.TopFiveNonITAssets).Methods("GET")
 
-	router.HandleFunc("/assets/byregion", h.AssetByRegion).Methods("GET")
-	router.HandleFunc("/assets/bysite", h.AssetBySite).Methods("GET")
+	router.HandleFunc("/assets/byregion", h.TotalAssetByRegion).Methods("GET")
+	router.HandleFunc("/assets/bysite", h.TotalAssetBySite).Methods("GET")
 	router.HandleFunc("/assets/statistics/{year}", h.AssetStatistics).Methods("GET")
 
 	return router

@@ -1,0 +1,20 @@
+# ----------- APP IMAGE BUILD -----------
+FROM golang:1.13.0 AS asset_management_app
+
+WORKDIR /app
+
+COPY /cmd/assetmanagement/assetmanagement .
+
+RUN chmod +x assetmanagement
+
+EXPOSE 8080
+
+CMD ["./assetmanagement"]
+
+# ----------- DB PREPARTAION FOR APP -----------
+
+FROM library/postgres AS asset_management_db
+
+ENV POSTGRES_USER postgres
+ENV POSTGRES_PASSWORD assetmanagement
+ENV POSTGRES_DB asset

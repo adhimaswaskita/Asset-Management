@@ -6,11 +6,11 @@ import (
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
 )
 
-//AssetNonIT is used to get all Asset  data
-func (h *Handler) AssetNonIT(w http.ResponseWriter, r *http.Request) {
+//TopFiveNonITAssets is used to get all Asset  data
+func (h *Handler) TopFiveNonITAssets(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	assets, err := h.Service.AssetNonIT()
+	assets, err := h.Service.TopFiveNonITAssets()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)

@@ -6,11 +6,11 @@ import (
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
 )
 
-//CountAsset is used to get all Asset  data
-func (h *Handler) CountAsset(w http.ResponseWriter, r *http.Request) {
+//TotalInStoreAsset is used to get all Asset  data
+func (h *Handler) TotalInStoreAsset(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	total, err := h.Service.CountAsset()
+	total, err := h.Service.TotalInStoreAsset()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)

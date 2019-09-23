@@ -6,17 +6,17 @@ import (
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
 )
 
-//AssetByRegion is used to get all Asset  data
-func (h *Handler) AssetByRegion(w http.ResponseWriter, r *http.Request) {
+//TopFiveITAssets is used to get all Asset  data
+func (h *Handler) TopFiveITAssets(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	total, err := h.Service.AssetByRegion()
+	assets, err := h.Service.TopFiveITAssets()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, total, nil, w)
+	rf.Response(nrf.SUCCESS, assets, nil, w)
 	return
 }

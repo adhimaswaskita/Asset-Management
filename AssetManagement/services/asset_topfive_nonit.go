@@ -4,10 +4,10 @@ import (
 	nmodel "github.com/adhimaswaskita/AssetManagement/models"
 )
 
-//AssetITTopFive is business logic for get all Asset
-func (s *Service) AssetITTopFive() (*[]nmodel.Dashboard, error) {
+//TopFiveNonITAssets is business logic for get all Asset
+func (s *Service) TopFiveNonITAssets() (*[]nmodel.Dashboard, error) {
 	var ResultAsset []nmodel.Dashboard
-	assets, err := s.Repository.AssetIT()
+	assets, err := s.Repository.NonITAssetSummary()
 	if err != nil {
 		return nil, err
 	}

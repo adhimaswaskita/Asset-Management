@@ -1,0 +1,30 @@
+version : '3'
+services:
+  db :
+    image: am_db
+    container_name: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks: 
+      back-end:
+        aliases:
+            - 'am_db'
+  app :
+    image : am_app
+    container_name: app
+    ports :
+      - 8080:8080
+    depends_on:
+      - db
+    volumes: 
+      - ${PWD}/config.yaml:/app/config.yaml
+    networks:
+      back-end:
+        aliases:
+            - 'am_app'
+networks:
+  back-end:
+volumes:
+  db-data:

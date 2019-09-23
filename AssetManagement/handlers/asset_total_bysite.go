@@ -6,17 +6,17 @@ import (
 	nrf "github.com/adhimaswaskita/AssetManagement/lib/responseformat"
 )
 
-//AssetIT is used to get all Asset  data
-func (h *Handler) AssetIT(w http.ResponseWriter, r *http.Request) {
+//TotalAssetBySite is used to get all Asset  data
+func (h *Handler) TotalAssetBySite(w http.ResponseWriter, r *http.Request) {
 	rf := nrf.ResponseFormat{}
 
-	assets, err := h.Service.AssetIT()
+	total, err := h.Service.TotalAssetBySite()
 	if err != nil {
 		stringErr := err.Error()
 		rf.Response(nrf.ERROR, nil, stringErr, w)
 		return
 	}
 
-	rf.Response(nrf.SUCCESS, assets, nil, w)
+	rf.Response(nrf.SUCCESS, total, nil, w)
 	return
 }
