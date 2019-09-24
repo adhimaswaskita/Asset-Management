@@ -21,9 +21,17 @@ func (s *Service) AssetStatistics(year int) (*[]nmodel.Statistics, error) {
 		if err != nil {
 			return nil, err
 		}
+
+		decrease, errdec := s.Repository.AssetDecrementStatistics(intMonth)
+		if errdec != nil {
+			return nil, err
+		}
+
 		asset.Month = months[intMonth-1]
+		asset.Decrease = decrease
+		asset.Increase = 0
+
 		result = append(result, asset)
 	}
-
 	return &result, nil
 }

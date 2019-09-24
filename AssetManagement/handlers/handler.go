@@ -76,6 +76,7 @@ type IHandler interface {
 	TotalAssetByRegion(w http.ResponseWriter, r *http.Request)
 	TotalAssetBySite(w http.ResponseWriter, r *http.Request)
 	AssetStatistics(w http.ResponseWriter, r *http.Request)
+	AssetRecentInsertion(w http.ResponseWriter, r *http.Request)
 }
 
 //Handler is http request handler that implements IHandler

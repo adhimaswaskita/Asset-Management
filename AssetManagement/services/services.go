@@ -75,6 +75,7 @@ type IService interface {
 	TotalAssetByRegion() (*[]nmodel.Dashboard, error)
 	TotalAssetBySite() (*[]nmodel.Dashboard, error)
 	AssetStatistics(year int) (*[]nmodel.Statistics, error)
+	AssetRecentInsertion() (*[]nmodel.RecentInsertion, error)
 }
 
 //Service is business logic that implements IService

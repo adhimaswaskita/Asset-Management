@@ -81,6 +81,8 @@ type IRepository interface {
 	TotalAssetByRegion() (*[]nmodel.Dashboard, error)
 	TotalAssetBySite() (*[]nmodel.Dashboard, error)
 	AssetStatistics(year int) (*[]nmodel.Statistics, error)
+	AssetDecrementStatistics(month int) (int, error)
+	AssetRecentInsertion() (*[]nmodel.RecentInsertion, error)
 }
 
 //Repository implements IRepository
