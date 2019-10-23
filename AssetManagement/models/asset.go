@@ -16,4 +16,5 @@ type Asset struct {
 	PurchaseDate    time.Time `json:"purchaseDate"`
 	PurchaseCost    float32   `json:"purchaseCost"`
 	Warranty        int       `json:"warranty"`
+	SerialNumber    string    `json:"serialnumber"`
 }

@@ -22,8 +22,8 @@ func (s *Service) AssetStatistics(year int) (*[]nmodel.Statistics, error) {
 			return nil, err
 		}
 
-		decrease, errdec := s.Repository.AssetDecrementStatistics(intMonth)
-		if errdec != nil {
+		decrease, err := s.Repository.AssetDecrementStatistics(intMonth)
+		if err != nil {
 			return nil, err
 		}
 
